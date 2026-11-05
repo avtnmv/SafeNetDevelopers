@@ -16,7 +16,7 @@
   }
   &[open] summary > span,
   &[data-expanded='true'] summary > span {
-    transform: rotate(45deg);
+    transform: rotate(var(--disclosure-rotation, 45deg));
   }
   &[data-expanded='false'] summary > span {
     transform: rotate(0);
@@ -24,4 +24,10 @@
 }
 .content {
   display: flow-root;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root summary > span {
+    transition: none;
+  }
 }
