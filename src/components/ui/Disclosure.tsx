@@ -9,11 +9,15 @@ export function Disclosure({
   children,
   defaultOpen = false,
   reveal = true,
+  className = '',
+  indicator = '+',
 }: {
   title: ReactNode;
   children: ReactNode;
   defaultOpen?: boolean;
   reveal?: boolean;
+  className?: string;
+  indicator?: ReactNode;
 }) {
   const details = useRef<HTMLDetailsElement>(null);
   const summary = useRef<HTMLElement>(null);
@@ -92,13 +96,13 @@ export function Disclosure({
   return (
     <details
       ref={details}
-      className={s.root}
+      className={`${s.root} ${className}`}
       open={defaultOpen}
       data-reveal={reveal ? 'fade' : undefined}
     >
       <summary ref={summary} onClick={toggle}>
         {title}
-        <span aria-hidden="true">+</span>
+        <span aria-hidden="true">{indicator}</span>
       </summary>
       <div ref={content} className={s.content}>
         {children}

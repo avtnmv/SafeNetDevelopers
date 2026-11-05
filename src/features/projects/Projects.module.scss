@@ -2,7 +2,8 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px 4px;
+  gap: 4px;
+  align-items: start;
 }
 .card {
   display: block;
@@ -12,26 +13,29 @@
   aspect-ratio: 750/540;
   overflow: hidden;
   border-radius: var(--card-radius);
-  background: #ddd;
+  background: white;
+}
+.imageViewport {
+  position: absolute;
+  inset: 4px;
+  overflow: hidden;
+  border-radius: max(0px, calc(var(--card-radius) - 4px));
+  transition:
+    inset 600ms,
+    border-radius 600ms;
   img {
     object-fit: cover;
     transition: transform 600ms;
   }
 }
-.name {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: white;
-  font-size: clamp(28px, 5vw, 80px);
-  letter-spacing: -0.06em;
-  font-weight: 600;
-  text-shadow: 0 1px 20px #0005;
-}
+
 .card {
   @include hover {
-    img {
+    .imageViewport {
+      inset: 0;
+      border-radius: var(--card-radius);
+    }
+    .imageViewport img {
       transform: scale(1.035);
     }
   }
@@ -41,9 +45,6 @@
   align-items: baseline;
   gap: 20px;
   padding: 16px 8px;
-  h3 {
-    font-size: 24px;
-  }
   span {
     font-size: 13px;
     &:last-child {
@@ -54,9 +55,67 @@
 @include mobile {
   .grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 4px;
   }
-  .name {
-    font-size: 48px;
+}
+
+.caseDisclosure {
+  --disclosure-rotation: 90deg;
+  margin-top: 4px;
+  padding: 20px;
+  border-radius: 18px;
+  background: var(--surface);
+  color: var(--ink);
+  > summary {
+    align-items: center;
+    gap: 16px;
+    @include focus;
+    > span {
+      display: flex;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+.caseHeading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+  min-width: 0;
+  > span {
+    font-size: 14px;
+    color: #686868;
+  }
+}
+.caseResults {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+  border-top: 1px solid #e7e7e7;
+  padding-top: 16px;
+  p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #686868;
+  }
+  strong {
+    font-weight: 500;
+    color: var(--ink);
+  }
+}
+
+.caption h3,
+.caseHeading h3 {
+  font-size: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imageViewport,
+  .imageViewport img {
+    transition: none;
   }
 }
