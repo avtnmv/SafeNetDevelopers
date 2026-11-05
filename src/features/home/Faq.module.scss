@@ -1,0 +1,55 @@
+@use '@/styles/mixins' as *;
+.section {
+  padding: 0 var(--gutter);
+  margin-top: var(--section-space);
+}
+.faq {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  > div:first-child {
+    h2 {
+      font-size: clamp(48px, 9vw, 144px);
+      letter-spacing: -0.06em;
+      line-height: 0.95;
+    }
+    p {
+      max-width: 400px;
+      margin-top: 40px;
+    }
+  }
+  details {
+    background: white;
+    border-radius: 18px;
+    margin-bottom: 4px;
+    padding: 25px;
+    summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      font-size: 18px;
+      &::-webkit-details-marker {
+        display: none;
+      }
+    }
+    p {
+      color: var(--muted);
+      padding-top: 22px;
+      max-width: 550px;
+    }
+  }
+}
+@include mobile {
+  .faq {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    > div:first-child p {
+      margin-top: 26px;
+    }
+    details {
+      padding: 22px;
+    }
+  }
+}

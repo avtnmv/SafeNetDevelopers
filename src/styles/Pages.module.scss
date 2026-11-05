@@ -1,0 +1,154 @@
+@use 'mixins' as *;
+.page {
+  padding: 90px var(--gutter) 0;
+}
+.title {
+  font-size: var(--font-title);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+  max-width: 1300px;
+  overflow-wrap: anywhere;
+  margin-bottom: 70px;
+}
+.lead {
+  max-width: 840px;
+  margin: 0 0 70px 25%;
+  font-size: var(--font-heading);
+  line-height: 1.1;
+  letter-spacing: -0.06em;
+}
+.description {
+  max-width: 550px;
+  font-size: 20px;
+  margin: 28px 0 50px;
+}
+.heroImage {
+  position: relative;
+  aspect-ratio: 1.7;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #ddd;
+  img {
+    object-fit: cover;
+  }
+}
+.detail {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px;
+  margin-top: 90px;
+  h2 {
+    font-size: 24px;
+    letter-spacing: -0.05em;
+  }
+  p {
+    max-width: 780px;
+    font-size: 24px;
+    line-height: 1.35;
+    margin-bottom: 28px;
+  }
+}
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-top: 60px;
+  > div {
+    position: relative;
+    aspect-ratio: 1.25;
+    overflow: hidden;
+    border-radius: var(--card-radius);
+    background: #ddd;
+    &:nth-child(3n) {
+      grid-column: 1/-1;
+      aspect-ratio: 1.65;
+    }
+    img {
+      object-fit: cover;
+    }
+  }
+}
+.article {
+  max-width: 1250px;
+  margin-inline: auto;
+  .title {
+    font-size: clamp(45px, 6vw, 90px);
+    line-height: 1.03;
+    max-width: 1000px;
+    margin: 24px 0;
+  }
+  .description {
+    max-width: 720px;
+  }
+}
+.date {
+  font-size: 14px;
+  color: var(--muted);
+}
+.next {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #ccc;
+  font-size: 24px;
+}
+.awards {
+  margin-top: 100px;
+  h2 {
+    font-size: var(--font-heading);
+    letter-spacing: -0.06em;
+    margin-bottom: 50px;
+  }
+  > div {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 30px;
+    padding: 26px 0;
+    border-top: 1px solid #bbb;
+  }
+}
+@include mobile {
+  .page {
+    padding-top: 50px;
+  }
+  .title {
+    margin-bottom: 40px;
+    font-size: clamp(48px, 15vw, 68px);
+  }
+  .lead {
+    margin: 0 0 45px;
+    font-size: 32px;
+  }
+  .description {
+    font-size: 18px;
+  }
+  .heroImage {
+    aspect-ratio: 1.1;
+  }
+  .detail {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+    gap: 25px;
+    p {
+      font-size: 20px;
+    }
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    > div:nth-child(3n) {
+      grid-column: auto;
+      aspect-ratio: 1.25;
+    }
+  }
+  .next {
+    font-size: 18px;
+    margin-top: 65px;
+  }
+  .awards > div {
+    gap: 15px;
+    font-size: 13px;
+  }
+}

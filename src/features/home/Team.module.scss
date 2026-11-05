@@ -1,0 +1,72 @@
+@use '@/styles/mixins' as *;
+.section {
+  padding: 0 var(--gutter);
+  margin-top: var(--section-space);
+}
+.team {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  h3 {
+    font-size: 24px;
+    margin: 20px 0 12px;
+    letter-spacing: -0.045em;
+  }
+  article > p {
+    color: var(--muted);
+    font-size: 14px;
+  }
+}
+.portrait {
+  position: relative;
+  aspect-ratio: 0.74;
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  background: #ddd;
+  img {
+    object-fit: cover;
+  }
+  > p {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    color: white;
+    font-size: 13px;
+    text-align: right;
+    text-shadow: 0 1px 4px #000;
+  }
+}
+.teamCallout {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  margin-top: 60px;
+  p {
+    max-width: 600px;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+}
+@include mobile {
+  .team {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 16px;
+    h3 {
+      font-size: 20px;
+    }
+  }
+  .portrait > p {
+    top: 12px;
+    right: 12px;
+    font-size: 10px;
+  }
+  .teamCallout {
+    align-items: start;
+    flex-direction: column;
+    gap: 25px;
+    p {
+      font-size: 24px;
+    }
+  }
+}

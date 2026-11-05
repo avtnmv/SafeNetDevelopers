@@ -1,0 +1,62 @@
+@use '@/styles/mixins' as *;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 4px;
+}
+.card {
+  display: block;
+}
+.image {
+  position: relative;
+  aspect-ratio: 750/540;
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  background: #ddd;
+  img {
+    object-fit: cover;
+    transition: transform 600ms;
+  }
+}
+.name {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: clamp(28px, 5vw, 80px);
+  letter-spacing: -0.06em;
+  font-weight: 600;
+  text-shadow: 0 1px 20px #0005;
+}
+.card {
+  @include hover {
+    img {
+      transform: scale(1.035);
+    }
+  }
+}
+.caption {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 16px 8px;
+  h3 {
+    font-size: 24px;
+  }
+  span {
+    font-size: 13px;
+    &:last-child {
+      margin-left: auto;
+    }
+  }
+}
+@include mobile {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .name {
+    font-size: 48px;
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "safenet-developers",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "format": "prettier --write \"src/**/*.{ts,tsx,scss,json}\" \"tests/**/*.mjs\" \"scripts/**/*.mjs\" \"*.{json,mjs,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,scss,json}\" \"tests/**/*.mjs\" \"scripts/**/*.mjs\" \"*.{json,mjs,md}\"",
+    "check:budgets": "node scripts/check-budgets.mjs"
+  },
+  "dependencies": {
+    "lenis": "^1.3.27",
+    "next": "16.4.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "prettier": "^3.9.10",
+    "sass": "^1.107.1",
+    "typescript": "^7.0.2"
+  }
+}

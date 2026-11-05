@@ -1,0 +1,115 @@
+.marquee {
+  position: relative;
+  --logo-gap: clamp(40px, 6vw, 90px);
+}
+.viewport {
+  overflow: hidden;
+  width: 100%;
+  padding-block: 12px;
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+.track {
+  display: flex;
+  width: max-content;
+  animation: client-marquee 32s linear infinite;
+}
+.group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--logo-gap);
+  flex-shrink: 0;
+  min-width: calc(100vw - 2 * var(--gutter));
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--logo-gap) 0 0;
+  li {
+    flex-shrink: 0;
+  }
+  img {
+    width: 140px;
+    height: 44px;
+    object-fit: contain;
+  }
+}
+.pauseInput,
+.pauseControl {
+  position: absolute;
+  top: -42px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.pauseInput {
+  z-index: 2;
+  margin: 0;
+  opacity: 0;
+}
+.pauseControl {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1;
+}
+.playIcon {
+  display: none;
+  font-size: 11px;
+  padding-left: 2px;
+}
+.pauseInput:focus-visible + .pauseControl {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+.pauseInput:checked + .pauseControl {
+  .pauseIcon {
+    display: none;
+  }
+  .playIcon {
+    display: block;
+  }
+}
+.pauseInput:checked ~ .viewport .track {
+  animation-play-state: paused;
+}
+@media (hover: hover) {
+  .viewport:hover .track {
+    animation-play-state: paused;
+  }
+}
+@keyframes client-marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pauseInput,
+  .pauseControl {
+    display: none;
+  }
+  .viewport {
+    mask-image: none;
+  }
+  .track {
+    animation: none;
+    transform: none;
+    width: 100%;
+  }
+  .group {
+    min-width: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 0;
+    &:last-child {
+      display: none;
+    }
+    img {
+      width: 100px;
+    }
+  }
+}

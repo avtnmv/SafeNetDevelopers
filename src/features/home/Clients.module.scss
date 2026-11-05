@@ -1,0 +1,14 @@
+@use '@/styles/mixins' as *;
+.clients {
+  padding: 60px var(--gutter) 0;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+@include mobile {
+  .clients {
+    padding-top: 50px;
+  }
+}

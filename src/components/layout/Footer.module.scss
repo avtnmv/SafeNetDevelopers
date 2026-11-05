@@ -1,0 +1,59 @@
+@use '@/styles/mixins' as *;
+.footer {
+  padding: 80px var(--gutter) 24px;
+}
+.top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  > p {
+    font-size: 28px;
+    line-height: 1.2;
+    max-width: 640px;
+  }
+  a {
+    display: block;
+    margin: 6px 0;
+  }
+}
+.label {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.wordmark {
+  font-size: clamp(62px, 17vw, 260px);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+  margin: 100px 0 60px;
+}
+.bottom {
+  display: flex;
+  gap: 30px;
+  border-top: 1px solid #ddd;
+  padding-top: 22px;
+  font-size: 12px;
+  small {
+    margin-right: auto;
+  }
+}
+@include mobile {
+  .top {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    > p {
+      grid-column: 1/-1;
+      font-size: 24px;
+    }
+  }
+  .bottom {
+    flex-wrap: wrap;
+    gap: 16px;
+    small {
+      width: 100%;
+    }
+  }
+  .wordmark {
+    margin-top: 60px;
+  }
+}

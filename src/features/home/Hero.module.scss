@@ -1,0 +1,213 @@
+@use '@/styles/mixins' as *;
+.hero {
+  margin: 0 6px;
+  min-height: calc(100svh - 67px);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  color: white;
+  padding: 50px 34px 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 75px;
+  background: #171717;
+  isolation: isolate;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(#0002, #0009);
+    z-index: -1;
+  }
+}
+.background {
+  object-fit: cover;
+  z-index: -2;
+}
+.top {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+.wordmark {
+  font-weight: 600;
+  font-size: clamp(70px, 10vw, 170px);
+  line-height: 0.84;
+  letter-spacing: -0.075em;
+  p {
+    font-size: 60px;
+    line-height: 1.1;
+    margin-top: 24px;
+    margin-right: 10%;
+    text-align: right;
+    letter-spacing: -0.06em;
+  }
+}
+.services {
+  padding: 0;
+  list-style: none;
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: -0.045em;
+}
+.crosses {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 28px;
+  color: #aaa;
+}
+.bottom {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  align-items: end;
+  gap: 30px;
+  h1 {
+    max-width: 490px;
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    text-indent: 4em;
+    span {
+      color: #ccc;
+    }
+  }
+  > small {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+.person {
+  display: flex;
+  align-items: stretch;
+  color: var(--ink);
+  gap: 0;
+  > img {
+    border: 6px solid white;
+    border-radius: 20px;
+    object-fit: cover;
+    width: 36%;
+    height: auto;
+  }
+  > div {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    flex: 1;
+  }
+  p {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  small {
+    font-size: 11px;
+  }
+  h2 {
+    font-size: 22px;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin: 8px 0 20px;
+  }
+}
+@include tablet {
+  .hero {
+    padding-inline: 26px;
+  }
+  .bottom {
+    grid-template-columns: 1.3fr 1fr;
+    h1 {
+      font-size: 19px;
+    }
+    > small {
+      position: absolute;
+      left: 26px;
+      bottom: 26px;
+    }
+  }
+  .person > div {
+    padding: 20px;
+  }
+  .wordmark p {
+    font-size: 50px;
+  }
+}
+@include mobile {
+  .hero {
+    margin: 0 2px;
+    padding: 38px 18px 32px;
+    gap: 50px;
+    min-height: 760px;
+  }
+  .top {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+  .wordmark {
+    font-size: clamp(50px, 14.5vw, 100px);
+    p {
+      font-size: 44px;
+      text-align: left;
+      margin-top: 24px;
+    }
+  }
+  .services {
+    align-self: flex-end;
+    text-align: right;
+    font-size: 14px;
+    margin: 0;
+  }
+  .crosses {
+    display: none;
+  }
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 36px;
+    h1 {
+      font-size: 18px;
+      order: 2;
+      text-indent: 3em;
+    }
+    > small {
+      order: 3;
+      text-align: left;
+    }
+  }
+  .person {
+    order: 1;
+    width: 100%;
+    max-width: 410px;
+    > img {
+      width: 32%;
+    }
+    > div {
+      padding: 22px;
+    }
+    h2 {
+      font-size: 21px;
+    }
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .background {
+      animation: hero-drift linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}
+@keyframes hero-drift {
+  from {
+    transform: scale(1.03) translateY(0);
+  }
+  to {
+    transform: scale(1.1) translateY(8%);
+  }
+}

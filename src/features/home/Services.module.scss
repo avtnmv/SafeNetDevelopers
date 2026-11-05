@@ -1,0 +1,87 @@
+@use '@/styles/mixins' as *;
+.section {
+  padding: 0 var(--gutter);
+  margin-top: var(--section-space);
+}
+.dark {
+  margin-inline: 6px;
+  padding: 150px 30px;
+  border-radius: var(--radius);
+  background: radial-gradient(ellipse at top right, #242424, #0a0a0a 70%);
+  color: white;
+}
+.services {
+  margin-left: 25%;
+  > a {
+    margin-top: 40px;
+  }
+  details {
+    border-top: 1px solid #555;
+    padding-block: 24px;
+  }
+  summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: start;
+    &::-webkit-details-marker {
+      display: none;
+    }
+    small {
+      font-size: 12px;
+      margin-top: 6px;
+    }
+    h3 {
+      font-size: clamp(26px, 3vw, 42px);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+    }
+    > span {
+      margin-left: auto;
+      font-size: 24px;
+    }
+  }
+}
+.serviceContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding: 40px 0 12px 70px;
+  > p {
+    max-width: 350px;
+    color: #ccc;
+  }
+  ul {
+    list-style: none;
+    padding: 20px 0 0;
+    line-height: 1.7;
+    color: #ccc;
+  }
+}
+@include tablet {
+  .dark {
+    padding: 100px 24px;
+  }
+}
+@include mobile {
+  .dark {
+    margin-inline: 2px;
+    padding: 55px 22px;
+  }
+  .services,
+  .pricingBody {
+    margin-left: 0;
+  }
+  .services summary {
+    gap: 12px;
+    h3 {
+      font-size: 25px;
+    }
+  }
+  .serviceContent {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    gap: 30px;
+  }
+}

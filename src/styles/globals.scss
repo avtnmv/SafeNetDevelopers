@@ -1,0 +1,180 @@
+@use 'mixins' as *;
+@use 'motion';
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/media/inter-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+2000-206F, U+20AC, U+2190-21FF;
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/media/inter-400-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/media/inter-500-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+2000-206F, U+20AC, U+2190-21FF;
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/media/inter-500-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/media/inter-600-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+2000-206F, U+20AC, U+2190-21FF;
+}
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/media/inter-600-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+:root {
+  --page: #f5f5f5;
+  --surface: #fff;
+  --ink: #0a0a0a;
+  --muted: #595959;
+  --inverse-muted: #bdbdbd;
+  --gutter: 36px;
+  --section-space: 190px;
+  --radius: 24px;
+  --card-radius: 20px;
+  --column-gap: 4px;
+  --font-body: 16px;
+  --font-title: 144px;
+  --font-heading: 60px;
+  --motion: 220ms;
+}
+@include tablet {
+  :root {
+    --gutter: 30px;
+    --section-space: 120px;
+    --font-title: 99px;
+    --font-heading: 50px;
+  }
+}
+@include mobile {
+  :root {
+    --gutter: 20px;
+    --section-space: 60px;
+    --font-title: 62px;
+    --font-heading: 32px;
+    --radius: 22px;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 82px;
+}
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font:
+    400 var(--font-body)/1.45 Inter,
+    Arial,
+    sans-serif;
+  letter-spacing: -0.035em;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  @include focus;
+}
+button,
+input,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  text-wrap: balance;
+}
+button,
+a,
+input,
+textarea,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+input,
+textarea,
+summary {
+  @include focus;
+}
+::selection {
+  color: white;
+  background: #222;
+}
+.skip {
+  position: fixed;
+  z-index: 100;
+  left: 12px;
+  top: 12px;
+  padding: 12px 20px;
+  background: white;
+  transform: translateY(-200%);
+  &:focus {
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+html[data-menu-open='true'] {
+  overflow: hidden;
+}
+[data-anchor-target]:focus {
+  outline: none;
+}
