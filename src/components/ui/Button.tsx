@@ -6,10 +6,12 @@ export function Button({
   href,
   children,
   inverse = false,
+  showArrow = true,
 }: {
   href: string;
   children: ReactNode;
   inverse?: boolean;
+  showArrow?: boolean;
 }) {
   return (
     <AnchorLink
@@ -17,7 +19,7 @@ export function Button({
       href={href === '/contact' ? '/#contact' : href}
     >
       {children}
-      <span aria-hidden="true">↗</span>
+      {showArrow && <span aria-hidden="true">↗</span>}
     </AnchorLink>
   );
 }
