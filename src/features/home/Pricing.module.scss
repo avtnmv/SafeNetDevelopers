@@ -325,3 +325,18 @@
 .customPrice {
   font-size: 40px;
 }
+
+.offers {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+.addOn {
+  align-self: start;
+  min-height: 400px;
+}
+@include mobile {
+  .addOn {
+    min-height: 0;
+  }
+}

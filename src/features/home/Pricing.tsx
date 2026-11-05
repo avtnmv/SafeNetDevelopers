@@ -1,14 +1,13 @@
 'use client';
 import { useState, type CSSProperties } from 'react';
-import { AnchorLink } from '@/components/navigation/AnchorLink';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import s from './Pricing.module.scss';
+import { PricingCard } from './PricingCard';
 import { pricingPlans, seoPrice } from './pricing-data';
 export function Pricing() {
   const [planIndex, setPlanIndex] = useState(0);
   const [seo, setSeo] = useState(false);
   const plan = pricingPlans[planIndex];
-  const total = plan.price === null ? null : plan.price + (seo ? seoPrice : 0);
   return (
     <section
       id="pricing"
@@ -59,31 +58,10 @@ export function Pricing() {
             </button>
           </div>
         </aside>
-        <div className={s.priceCard}>
-          <div className={s.planInfo} aria-live="polite">
-            <div className={s.planHeading}>
-              <h3>{plan.name}</h3>
-              {plan.id === 'business' && <span className={s.recommended}>Рекомендовано</span>}
-            </div>
-            <p className={s.description}>{plan.description}</p>
-            <p className={`${s.price} ${total === null ? s.customPrice : ''}`}>
-              {total === null ? 'За оцінкою' : `$${total}`}
-              <small>{total === null ? (seo ? '+ $75 за SEO' : '') : '/проєкт'}</small>
-            </p>
-            <p className={s.scope}>{plan.scope}</p>
-          </div>
-          <ul className={s.features}>
-            {plan.features.map((feature) => (
-              <li key={feature}>{feature}</li>
-            ))}
-          </ul>
-          <p className={s.delivery}>
-            <span>Термін виконання</span>
-            <span>{plan.delivery}</span>
-          </p>
-          <AnchorLink className={s.contact} href="/#contact">
-            {plan.id === 'custom' ? 'Обговорити завдання' : 'Обрати пакет'}
-          </AnchorLink>
+        <div className={s.offers}>
+          {plan.offers.map((offer) => (
+            <PricingCard key={offer.id} offer={offer} seo={seo} />
+          ))}
         </div>
       </div>
       <div className={s.note}>
