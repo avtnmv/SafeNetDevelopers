@@ -1,5 +1,4 @@
 import { Hero } from '@/features/home/Hero';
-import { Clients } from '@/features/home/Clients';
 import { ProjectsSection } from '@/features/home/ProjectsSection';
 import { Advantages } from '@/features/home/Advantages';
 import { Services } from '@/features/home/Services';
@@ -14,7 +13,6 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Clients />
       <ProjectsSection />
       <Advantages />
       <Services />
