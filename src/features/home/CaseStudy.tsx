@@ -1,3 +1,4 @@
+import { Counter } from '@/components/ui/Counter';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import s from './CaseStudy.module.scss';
 
@@ -11,20 +12,27 @@ export function CaseStudy() {
       <div className={s.bento}>
         <div data-reveal="card">
           <p>Продуктивність</p>
-          <strong>100</strong>
+          <strong>
+            <Counter value={100} />
+          </strong>
           <h3>Оцінка PageSpeed</h3>
           <p>Ми дбаємо про продуктивність, зберігаючи привабливий вигляд і функціональність.</p>
         </div>
         <div data-reveal="card">
           <p>Зростання продуктивності</p>
-          <strong>+48%</strong>
+          <strong>
+            <Counter value={48} prefix="+" suffix="%" />
+          </strong>
           <p>Швидкість сторінки</p>
         </div>
         <div data-reveal="card">
           <p>Зростання конверсії</p>
-          <strong>4.2% → 5.9%</strong>
+          <strong>
+            <Counter value={4.2} decimals={1} suffix="%" /> →{' '}
+            <Counter value={5.9} decimals={1} suffix="%" />
+          </strong>
           <p>«Після оновлення дизайну кількість звернень стабільно зростає на 60%.»</p>
-          <small>Angela Smith</small>
+          <small>Наталія Кравченко</small>
         </div>
       </div>
     </section>

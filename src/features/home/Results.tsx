@@ -1,3 +1,4 @@
+import { Counter } from '@/components/ui/Counter';
 import s from './Results.module.scss';
 
 export function Results() {
@@ -11,7 +12,17 @@ export function Results() {
           ['2016–25', 'Досвід у цифрових проєктах'],
         ].map(([number, label]) => (
           <div key={label}>
-            <strong>{number}</strong>
+            <strong>
+              {number === '2016–25' ? (
+                number
+              ) : (
+                <Counter
+                  value={parseFloat(number)}
+                  decimals={number.includes('.') ? 1 : 0}
+                  suffix={number.includes('/') ? '/5' : '+'}
+                />
+              )}
+            </strong>
             <p>{label}</p>
           </div>
         ))}

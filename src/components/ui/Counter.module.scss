@@ -1,0 +1,12 @@
+.counter {
+  display: inline-grid;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  > span {
+    grid-area: 1 / 1;
+  }
+}
+.final {
+  opacity: 0;
+  pointer-events: none;
+}

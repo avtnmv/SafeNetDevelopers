@@ -42,11 +42,11 @@ export function Hero() {
         </h1>
         <small>© 2025 {site.name}</small>
         <div className={s.person}>
-          <Image src={assets.lead!} alt="Lauren Thompson" width={120} height={154} sizes="120px" />
+          <Image src={assets.lead!} alt="Олена Ковальчук" width={120} height={154} sizes="120px" />
           <div>
             <p>Керівниця команди</p>
             <small>у SafeNet Developers</small>
-            <h2>Lauren Thompson</h2>
+            <h2>Олена Ковальчук</h2>
             <Button href="/contact">Поговорімо</Button>
           </div>
         </div>
