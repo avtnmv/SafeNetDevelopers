@@ -337,7 +337,7 @@
             "Отримати доступ до персональної інформації, яку ми зберігаємо про вас",
             "Вимагати виправлення або видалення вашої інформації",
             "Відмовитися від маркетингових повідомлень",
-            "Відкликати згоду на обробку даних. Щоб скористатися цими правами, напишіть на hello@fabrica.com."
+            "Відкликати згоду на обробку даних. Щоб скористатися цими правами, напишіть на Info@safenet.org.ua."
           ]
         },
         {
@@ -358,7 +358,7 @@
         },
         {
           "type": "paragraph",
-          "text": "SafeNet Developers (312) 555-2468 hello@fabrica.com"
+          "text": "SafeNet Developers (312) 555-2468 Info@safenet.org.ua"
         }
       ]
     },
@@ -457,7 +457,7 @@
         },
         {
           "type": "paragraph",
-          "text": "SafeNet Developers (312) 555-2468 hello@fabrica.com"
+          "text": "SafeNet Developers (312) 555-2468 Info@safenet.org.ua"
         }
       ]
     }

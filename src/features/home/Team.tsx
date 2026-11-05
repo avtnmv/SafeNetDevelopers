@@ -38,7 +38,7 @@ export function Team() {
       </div>
       <div className={s.teamCallout} data-reveal="fade">
         <p>Ми віримо, що найкращі результати народжуються у співпраці.</p>
-        <Button href="mailto:hello@fabrica.com">Приєднатися</Button>
+        <Button href="mailto:Info@safenet.org.ua">Приєднатися</Button>
       </div>
     </section>
   );

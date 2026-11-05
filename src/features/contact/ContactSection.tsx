@@ -1,3 +1,5 @@
+import { HeroVideo } from '@/features/home/HeroVideo';
+import { assets } from '@/lib/content';
 import { ContactForm } from './ContactForm';
 import { Button } from '@/components/ui/Button';
 import { site } from '@/config/site';
@@ -11,7 +13,13 @@ export function ContactSection() {
       className={s.section}
       aria-labelledby="contact-heading"
     >
-      <ContactForm />
+      <div className={s.media} aria-hidden="true">
+        <HeroVideo src={assets.heroVideo} className={s.background} />
+      </div>
+      <div className={s.formColumn}>
+        <ContactForm />
+        <p className={s.copyright}>© 2025 SafeNet Developers</p>
+      </div>
       <div className={s.copy} data-reveal="fade">
         <h2 id="contact-heading">Поговорімо.</h2>
         <p>Розкажіть про свій проєкт — сайт, SEO або маркетинг.</p>
@@ -23,7 +31,9 @@ export function ContactSection() {
           <h3>Зрозумілі наступні кроки.</h3>
           <p>Після консультації ми надамо детальний план і графік роботи.</p>
         </div>
-        <Button href={`mailto:${site.email}`}>Написати напряму</Button>
+        <Button inverse href={`mailto:${site.email}`}>
+          Написати напряму
+        </Button>
       </div>
     </section>
   );

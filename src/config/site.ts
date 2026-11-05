@@ -10,7 +10,14 @@ export const navigation = [
 export const site = {
   name: 'SafeNet Developers',
   description: 'Вебдизайн, розробка сайтів, брендинг і цифровий маркетинг.',
-  email: 'hello@fabrica.com',
+  email: 'Info@safenet.org.ua',
   phone: '(312) 555-2468',
   phoneHref: 'tel:5556667777',
 };
+
+export const socialLinks = [
+  { label: 'YouTube', href: 'https://www.youtube.com/@SafeNetSecurity1' },
+  { label: 'Facebook', href: 'https://www.facebook.com/people/SafeNet-Security/61574578233656/' },
+  { label: 'Instagram', href: 'https://www.instagram.com/safe.net.security' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/safenet-sec/' },
+] as const;
