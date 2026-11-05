@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { assets } from '@/lib/content';
+import { assets, team } from '@/lib/content';
 import { Button } from '@/components/ui/Button';
 import { AnchorLink } from '@/components/navigation/AnchorLink';
 import { HeroVideo } from './HeroVideo';
@@ -72,7 +72,7 @@ export function Hero() {
           </div>
         </div>
         <div className={s.person}>
-          <Image src={assets.lead!} alt="Lauren Thompson" width={120} height={154} sizes="120px" />
+          <Image src={assets.lead!} alt={team[0].name} width={120} height={154} sizes="120px" />
           <div>
             <div className={s.processCopy}>
               <h2>Як ми працюємо</h2>

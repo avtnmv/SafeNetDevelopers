@@ -1,3 +1,4 @@
+import { Counter } from '@/components/ui/Counter';
 import { Button } from '@/components/ui/Button';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import s from './Advantages.module.scss';
@@ -22,7 +23,9 @@ export function Advantages() {
           </p>
           <div className={s.statistics} data-reveal="fade">
             <div>
-              <strong>50+</strong>
+              <strong>
+                <Counter value={50} suffix="+" />
+              </strong>
               <h3>Успішно завершених проєктів</h3>
               <p>
                 Ми реалізували понад 50 проєктів, які допомагають компаніям отримувати реальні
@@ -30,7 +33,9 @@ export function Advantages() {
               </p>
             </div>
             <div>
-              <strong>4.9/5</strong>
+              <strong>
+                <Counter value={4.9} decimals={1} suffix="/5" />
+              </strong>
               <h3>Оцінка клієнтів</h3>
             </div>
           </div>

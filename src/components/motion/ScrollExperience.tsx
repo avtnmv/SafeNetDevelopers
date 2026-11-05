@@ -3,10 +3,12 @@
 import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import type Lenis from 'lenis';
+import { useCounters } from './useCounters';
 
 /** One scroll controller and one reveal observer; scrolling never updates React state. */
 export function ScrollExperience() {
   const pathname = usePathname();
+  useCounters(pathname);
   const scroll = useRef<Lenis | null>(null);
 
   useEffect(() => {
