@@ -13,17 +13,30 @@
   gap: 75px;
   background: #171717;
   isolation: isolate;
+}
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  isolation: isolate;
+  pointer-events: none;
   &::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(#0002, #0009);
-    z-index: -1;
+    background: #4931a8;
+    mix-blend-mode: hue;
+    z-index: 1;
   }
 }
 .background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: -2;
+  object-position: center;
+  z-index: 0;
 }
 .top {
   display: grid;
@@ -32,17 +45,14 @@
   align-items: center;
 }
 .wordmark {
+  min-width: 0;
   font-weight: 600;
-  font-size: clamp(70px, 10vw, 170px);
-  line-height: 0.84;
+  font-size: clamp(48px, 6.8vw, 116px);
+  line-height: 0.9;
   letter-spacing: -0.075em;
-  p {
-    font-size: 60px;
-    line-height: 1.1;
-    margin-top: 24px;
-    margin-right: 10%;
-    text-align: right;
-    letter-spacing: -0.06em;
+  text-align: left;
+  span {
+    opacity: 0.7;
   }
 }
 .services {
@@ -63,15 +73,15 @@
   grid-template-columns: 1.5fr 1fr 1fr;
   align-items: end;
   gap: 30px;
-  h1 {
+  .description {
     max-width: 490px;
     font-size: 22px;
     line-height: 1.2;
     font-weight: 500;
     letter-spacing: -0.04em;
-    text-indent: 4em;
+    text-indent: 8%;
     span {
-      color: #ccc;
+      color: rgb(255 255 255 / 70%);
     }
   }
   > small {
@@ -79,7 +89,57 @@
     text-align: center;
   }
 }
+.copy {
+  min-width: 0;
+  max-width: 490px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  transition:
+    background var(--motion),
+    border-color var(--motion);
+  svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+  }
+  @include focus;
+}
+.primaryAction {
+  background: white;
+  color: var(--ink);
+  @include hover {
+    background: #eee;
+  }
+}
+.secondaryAction {
+  background: transparent;
+  border-color: rgb(255 255 255 / 40%);
+  color: white;
+  @include hover {
+    border-color: white;
+    background: rgb(255 255 255 / 8%);
+  }
+}
 .person {
+  grid-column: -2 / -1;
   display: flex;
   align-items: stretch;
   color: var(--ink);
@@ -94,8 +154,15 @@
   > div {
     background: white;
     border-radius: 20px;
-    padding: 24px;
+    padding: 16px;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    > a {
+      align-self: flex-start;
+    }
   }
   p {
     font-size: 13px;
@@ -108,7 +175,7 @@
     font-size: 22px;
     line-height: 1.1;
     letter-spacing: -0.04em;
-    margin: 8px 0 20px;
+    margin: 0;
   }
 }
 @include tablet {
@@ -117,7 +184,7 @@
   }
   .bottom {
     grid-template-columns: 1.3fr 1fr;
-    h1 {
+    .description {
       font-size: 19px;
     }
     > small {
@@ -125,12 +192,6 @@
       left: 26px;
       bottom: 26px;
     }
-  }
-  .person > div {
-    padding: 20px;
-  }
-  .wordmark p {
-    font-size: 50px;
   }
 }
 @include mobile {
@@ -147,12 +208,7 @@
     gap: 32px;
   }
   .wordmark {
-    font-size: clamp(50px, 14.5vw, 100px);
-    p {
-      font-size: 44px;
-      text-align: left;
-      margin-top: 24px;
-    }
+    font-size: clamp(32px, 8.6vw, 68px);
   }
   .services {
     align-self: flex-end;
@@ -168,15 +224,18 @@
     flex-direction: column;
     align-items: stretch;
     gap: 36px;
-    h1 {
+    .description {
       font-size: 18px;
       order: 2;
-      text-indent: 3em;
+      text-indent: 8%;
     }
     > small {
       order: 3;
       text-align: left;
     }
+  }
+  .copy {
+    order: 2;
   }
   .person {
     order: 1;
@@ -184,9 +243,6 @@
     max-width: 410px;
     > img {
       width: 32%;
-    }
-    > div {
-      padding: 22px;
     }
     h2 {
       font-size: 21px;
@@ -210,4 +266,18 @@
   to {
     transform: scale(1.1) translateY(8%);
   }
+}
+
+.person .processDescription {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #6b6b6b;
+  margin: 0;
+}
+
+.processCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

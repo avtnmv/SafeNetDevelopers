@@ -490,7 +490,7 @@
   ],
   "assets": {
     "hero": "/media/hero-poster.jpg",
-    "heroVideo": "/media/hero-video.mp4",
+    "heroVideo": "/media/hero-animation.webm",
     "lead": "/media/team-lead.jpg",
     "studio": "/media/studio-team.jpg",
     "process": [
