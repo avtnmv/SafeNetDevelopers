@@ -1,4 +1,5 @@
 'use client';
+import { ArrowUpRight } from '@/components/ui/ArrowUpRight';
 import { useEffect, useRef, useState } from 'react';
 import { chatMessages, chatTimeline, chatProfile } from './chat-data';
 import s from './AnimatedChatIphone.module.scss';
@@ -114,7 +115,9 @@ export default function ChatPlayback({ visible }: { visible: boolean }) {
                           <br />
                           your business.
                         </strong>
-                        <i>Let’s start ↗</i>
+                        <i>
+                          Let’s start <ArrowUpRight />
+                        </i>
                       </div>
                     )}
                     <p>{message.text}</p>

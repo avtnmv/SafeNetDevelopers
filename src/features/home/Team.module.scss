@@ -36,18 +36,6 @@
     text-shadow: 0 1px 4px #000;
   }
 }
-.teamCallout {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  align-items: center;
-  margin-top: 60px;
-  p {
-    max-width: 600px;
-    font-size: 28px;
-    line-height: 1.2;
-  }
-}
 @include mobile {
   .team {
     grid-template-columns: 1fr 1fr;
@@ -60,13 +48,5 @@
     top: 12px;
     right: 12px;
     font-size: 10px;
-  }
-  .teamCallout {
-    align-items: start;
-    flex-direction: column;
-    gap: 25px;
-    p {
-      font-size: 24px;
-    }
   }
 }

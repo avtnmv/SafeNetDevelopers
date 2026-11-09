@@ -1,3 +1,4 @@
+import { ArrowUpRight } from '@/components/ui/ArrowUpRight';
 import { AnchorLink } from '@/components/navigation/AnchorLink';
 import type { ReactNode } from 'react';
 import s from './Button.module.scss';
@@ -19,7 +20,7 @@ export function Button({
       href={href === '/contact' ? '/#contact' : href}
     >
       {children}
-      {showArrow && <span aria-hidden="true">↗</span>}
+      {showArrow && <ArrowUpRight />}
     </AnchorLink>
   );
 }

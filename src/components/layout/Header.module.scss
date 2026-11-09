@@ -18,33 +18,6 @@
   position: relative;
   z-index: 32;
 }
-.desktop {
-  display: flex;
-  flex: 1;
-  justify-content: space-around;
-  font-weight: 600;
-  gap: 15px;
-  a {
-    position: relative;
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -5px;
-      height: 1px;
-      background: currentColor;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 240ms;
-    }
-    @include hover {
-      &::after {
-        transform: scaleX(1);
-      }
-    }
-  }
-}
 .menuToggle {
   position: relative;
   z-index: 3;
@@ -155,11 +128,6 @@
   .menuBottom {
     opacity: 1;
     transition: opacity 450ms 180ms;
-  }
-}
-@media (max-width: 1199px) {
-  .desktop {
-    display: none;
   }
 }
 @include mobile {

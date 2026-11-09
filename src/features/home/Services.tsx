@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Disclosure } from '@/components/ui/Disclosure';
-import { Button } from '@/components/ui/Button';
+import { ActionLink } from '@/components/ui/ActionLink';
 import { services } from './data';
 import s from './Services.module.scss';
 
@@ -9,11 +9,10 @@ export function Services() {
     <section id="services" tabIndex={-1} data-anchor-target className={s.section}>
       <header className={s.heading}>
         <p data-reveal="fade">
-          <span aria-hidden="true">✚</span> Що ми робимо
+          <span aria-hidden="true">✚</span> Наші послуги
         </p>
         <h2 data-reveal="words">
-          <span data-word>Послуги.</span>
-          <sup>({services.length})</sup>
+          <span data-word>Що входить.</span>
         </h2>
       </header>
       <div className={s.services}>
@@ -32,7 +31,7 @@ export function Services() {
             <div className={s.serviceContent}>
               <div className={s.images} aria-hidden="true">
                 {item.images.map((src) => (
-                  <Image key={src} src={src} alt="" width={80} height={80} sizes="80px" />
+                  <Image key={src} src={src} alt="" width={120} height={120} sizes="120px" />
                 ))}
               </div>
               <div className={s.description}>
@@ -47,7 +46,6 @@ export function Services() {
                   {item.tags.map((tag) => (
                     <li key={tag}>{tag}</li>
                   ))}
-                  <li className={s.count}>{item.tags.length}+</li>
                 </ul>
               </div>
             </div>
@@ -55,9 +53,7 @@ export function Services() {
         ))}
       </div>
       <div className={s.action}>
-        <Button inverse href="/contact">
-          Почати
-        </Button>
+        <ActionLink href="/#contact">Почати</ActionLink>
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import s from './Advantages.module.scss';
 
 export function Advantages() {
   return (
-    <section className={s.section}>
+    <section id="advantages" tabIndex={-1} data-anchor-target className={s.section}>
       <SectionHeading
         label="Чому обирають нас"
         title="Результат у кожному проєкті завдяки дизайну та функціональності."
