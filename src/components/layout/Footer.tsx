@@ -1,3 +1,4 @@
+import { BrandLogo } from '@/components/ui/BrandLogo';
 import { AnchorLink } from '@/components/navigation/AnchorLink';
 import { site, socialLinks } from '@/config/site';
 import s from './Footer.module.scss';
@@ -59,8 +60,7 @@ export function Footer() {
           ))}
         </div>
         <AnchorLink className={s.wordmark} href="/#main" aria-label="SafeNet Developers — головна">
-          <span>SafeNet</span>
-          <span className={s.subtitle}>Developers</span>
+          <BrandLogo />
         </AnchorLink>
       </div>
       <div className={s.bottom}>

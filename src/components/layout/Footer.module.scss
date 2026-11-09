@@ -68,21 +68,9 @@
 }
 .wordmark {
   grid-column: 2 / -1;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  font-size: clamp(80px, 14.3vw, 260px);
-  line-height: 0.85;
-  font-weight: 600;
-  letter-spacing: -0.075em;
-  width: fit-content;
-  max-width: 100%;
-}
-.subtitle {
-  margin-top: 30px;
-  font-size: clamp(30px, 3.6vw, 64px);
-  line-height: 1;
-  letter-spacing: -0.06em;
+  display: block;
+  width: 100%;
+  max-width: 800px;
 }
 .bottom {
   background: #090909;
@@ -140,12 +128,7 @@
   }
   .wordmark {
     grid-column: 1 / -1;
-    font-size: 26vw;
     margin-top: 20px;
-  }
-  .subtitle {
-    font-size: 9vw;
-    margin-top: 18px;
   }
   .bottom {
     grid-template-columns: 1fr;
