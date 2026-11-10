@@ -8,8 +8,7 @@ export function ProjectsSection() {
       <div className={s.headingRow}>
         <SectionHeading title="Проєкти." />
         <p className={s.intro} data-reveal="fade">
-          Ми допомогли компаніям із різних галузей досягти цілей. Ось кілька наших останніх
-          проєктів.
+          Сайти для різних задач бізнесу. Відкрийте кейс, щоб побачити, що змінилося після запуску.
         </p>
       </div>
       <ProjectGrid />

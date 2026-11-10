@@ -1,7 +1,7 @@
 export const navigation = [
   { href: '/#projects', label: 'Проєкти' },
   { href: '/#advantages', label: 'Чому обирають нас' },
-  { href: '/#services', label: 'Наші послуги' },
+  { href: '/#services', label: 'Що входить' },
   { href: '/#testimonials', label: 'Відгуки' },
   { href: '/#pricing', label: 'Ціни' },
   { href: '/#faq', label: 'Запитання' },
@@ -9,6 +9,7 @@ export const navigation = [
 ] as const;
 export const site = {
   name: 'SafeNet Developers',
+  telegram: '',
   description: 'Вебдизайн, розробка сайтів, брендинг і цифровий маркетинг.',
   email: 'Info@safenet.org.ua',
   phone: '(312) 555-2468',

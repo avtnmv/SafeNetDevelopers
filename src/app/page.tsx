@@ -1,3 +1,4 @@
+import { TrustStrip } from '@/features/home/TrustStrip';
 import { Hero } from '@/features/home/Hero';
 import { ProjectsSection } from '@/features/home/ProjectsSection';
 import { Advantages } from '@/features/home/Advantages';
@@ -12,13 +13,14 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <TrustStrip />
       <ProjectsSection />
-      <Advantages />
+      <Pricing />
       <Services />
+      <Advantages />
       <Process />
       <Testimonials />
       <Results />
-      <Pricing />
       <Team />
       <Faq />
     </>

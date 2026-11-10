@@ -1,3 +1,4 @@
+import { TelegramLink } from '@/components/ui/TelegramLink';
 import { BrandLogo } from '@/components/ui/BrandLogo';
 import { AnchorLink } from '@/components/navigation/AnchorLink';
 import { site } from '@/config/site';
@@ -10,6 +11,7 @@ export function Header() {
         <BrandLogo />
       </AnchorLink>
       <Menu />
+      <TelegramLink floating />
     </header>
   );
 }

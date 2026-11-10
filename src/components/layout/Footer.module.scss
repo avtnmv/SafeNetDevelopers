@@ -141,3 +141,9 @@
   height: 18px;
   color: var(--ink);
 }
+
+@media (max-width: 809px) {
+  .footer {
+    padding-bottom: 78px;
+  }
+}

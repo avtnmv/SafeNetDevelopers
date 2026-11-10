@@ -2,6 +2,7 @@
 const config = {
   agentRules: false,
   poweredByHeader: false,
+  devIndicators: false,
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [390, 640, 810, 1080, 1440, 1920],

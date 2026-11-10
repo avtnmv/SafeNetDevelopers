@@ -349,3 +349,64 @@
     min-height: 0;
   }
 }
+
+.toggle {
+  display: none;
+}
+.cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.offers {
+  display: flex;
+}
+.priceCard {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+  padding: 30px;
+}
+.features {
+  flex: 1;
+}
+.delivery,
+.contact {
+  width: 100%;
+}
+.planInfo {
+  min-height: 260px;
+}
+.extras {
+  margin: 28px 0 0 25%;
+  max-width: 800px;
+  color: #aaa;
+  line-height: 1.7;
+  font-size: 14px;
+}
+@media (max-width: 1199px) and (min-width: 810px) {
+  .priceCard {
+    padding: 20px;
+  }
+  .contact {
+    padding-inline: 12px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 809px) {
+  .toggle {
+    display: flex;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .inactive {
+    display: none;
+  }
+  .planInfo {
+    min-height: 0;
+  }
+  .extras {
+    margin-left: 0;
+  }
+}

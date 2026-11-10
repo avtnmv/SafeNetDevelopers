@@ -1,3 +1,4 @@
+'use client';
 import { AnchorLink } from '@/components/navigation/AnchorLink';
 import { seoPrice, type PricingOffer } from './pricing-data';
 import s from './Pricing.module.scss';
@@ -30,9 +31,12 @@ export function PricingCard({ offer, seo }: { offer: PricingOffer; seo: boolean 
       <AnchorLink
         className={s.contact}
         href="/#contact"
+        beforeNavigate={() => {
+          document.dispatchEvent(new CustomEvent('site:plan', { detail: offer.id }));
+        }}
         aria-label={`${offer.id === 'custom' ? 'Обговорити' : 'Обрати'}: ${offer.name}`}
       >
-        {offer.id === 'custom' ? 'Обговорити завдання' : 'Обрати пакет'}
+        {offer.id === 'custom' ? 'Обговорити завдання' : `Обрати ${offer.name} — $${total}`}
       </AnchorLink>
     </article>
   );

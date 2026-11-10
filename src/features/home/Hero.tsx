@@ -1,6 +1,5 @@
-import Image from 'next/image';
-import { assets, team } from '@/lib/content';
-import { Button } from '@/components/ui/Button';
+import { assets } from '@/lib/content';
+import { IntroVideo } from './IntroVideo';
 import { ActionLink } from '@/components/ui/ActionLink';
 import { HeroVideo } from './HeroVideo';
 import s from './Hero.module.scss';
@@ -12,16 +11,15 @@ export function Hero() {
       </div>
       <div className={s.top}>
         <h1 className={s.wordmark}>
-          Розробка сайту
+          Сайт для бізнесу
           <br />
-          <span>за 3-5 днів</span>
+          <span>за 3 дні</span>
         </h1>
         <ul className={s.services}>
-          <li>Вебдизайн і розробка</li>
-          <li>Базова SEO-оптимізація</li>
-          <li>Продаючі текста</li>
-          <li>Перевірка кібербезпеки</li>
-          <li>Від 300$ за сайт</li>
+          <li>Фіксована ціна $300 / $500</li>
+          <li>Запуск за 3 дні</li>
+          <li>Перевірка безпеки + звіт</li>
+          <li>Домен, сайт і доступи — ваші</li>
         </ul>
       </div>
       <div className={s.crosses} aria-hidden="true">
@@ -33,33 +31,17 @@ export function Hero() {
       <div className={s.bottom}>
         <div className={s.copy}>
           <p className={s.description}>
-            Структура, тексти та дизайн — і ваш бізнес готовий до продажів.{' '}
-            <span>
-              Покажемо цінність вашої пропозиції, відповімо на головні запитання клієнтів і зробимо
-              шлях до заявки простим.
-            </span>
+            Лендінг або сайт, який приймає заявки в Telegram і належить вам.{' '}
+            <span>Структура, тексти, дизайн — за 3 дні. $300 або $500. Ціна фіксована.</span>
           </p>
           <div className={s.actions}>
-            <ActionLink href="/#contact">Отримати консультацію</ActionLink>
+            <ActionLink href="/#contact">Розрахувати сайт за 15 хвилин</ActionLink>
             <ActionLink href="/#projects" secondary>
               Дивитися кейси
             </ActionLink>
           </div>
         </div>
-        <div className={s.person}>
-          <Image src={assets.lead!} alt={team[0].name} width={120} height={154} sizes="120px" />
-          <div>
-            <div className={s.processCopy}>
-              <h2>Як ми працюємо</h2>
-              <p className={s.processDescription}>
-                Детально про процес роботи, формування ціни та реалізацію.
-              </p>
-            </div>
-            <Button href="/contact" showArrow={false}>
-              Дивитися відео
-            </Button>
-          </div>
-        </div>
+        <IntroVideo />
       </div>
     </section>
   );

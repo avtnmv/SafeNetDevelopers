@@ -1,4 +1,3 @@
-import { Counter } from '@/components/ui/Counter';
 import Image from 'next/image';
 import type { CSSProperties } from 'react';
 import { AnchorLink } from '@/components/navigation/AnchorLink';
@@ -22,13 +21,7 @@ export function Testimonials() {
       <div className={s.reviews}>
         <div className={s.rating} data-reveal="fade">
           <div className={s.ratingIntro}>
-            <p>
-              Ми реалізували{' '}
-              <b>
-                <Counter value={50} suffix="+" /> проєктів
-              </b>
-              , які допомагають компаніям отримувати реальні результати.
-            </p>
+            <p>Враження клієнтів про співпрацю із SafeNet Developers.</p>
           </div>
           <div className={s.ratingFooter}>
             <p className={s.brand}>{site.name}</p>
@@ -49,13 +42,10 @@ export function Testimonials() {
                     sizes="38px"
                   />
                 ))}
-                <span>
-                  <Counter value={50} suffix="+" />
-                </span>
               </div>
               <div>
                 <Stars />
-                <p>Нам довіряють клієнти з усього світу</p>
+                <p>Дякуємо за вашу довіру</p>
               </div>
             </div>
             <AnchorLink className={s.reviewLink} href="/#contact">
