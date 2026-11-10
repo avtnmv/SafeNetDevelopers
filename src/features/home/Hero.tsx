@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { assets, team } from '@/lib/content';
 import { Button } from '@/components/ui/Button';
-import { AnchorLink } from '@/components/navigation/AnchorLink';
+import { ActionLink } from '@/components/ui/ActionLink';
 import { HeroVideo } from './HeroVideo';
 import s from './Hero.module.scss';
 export function Hero() {
@@ -20,6 +20,7 @@ export function Hero() {
           <li>Вебдизайн і розробка</li>
           <li>Базова SEO-оптимізація</li>
           <li>Продаючі текста</li>
+          <li>Перевірка кібербезпеки</li>
           <li>Від 300$ за сайт</li>
         </ul>
       </div>
@@ -39,36 +40,10 @@ export function Hero() {
             </span>
           </p>
           <div className={s.actions}>
-            <AnchorLink href="/#contact" className={`${s.action} ${s.primaryAction}`}>
-              Отримати заявку{' '}
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path d="M8 2v12m-5-5 5 5 5-5" transform="rotate(-135 8 8)" />
-              </svg>
-            </AnchorLink>
-            <AnchorLink href="/#projects" className={`${s.action} ${s.secondaryAction}`}>
-              Дивитися кейси{' '}
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path d="M8 2v12m-5-5 5 5 5-5" />
-              </svg>
-            </AnchorLink>
+            <ActionLink href="/#contact">Отримати консультацію</ActionLink>
+            <ActionLink href="/#projects" secondary>
+              Дивитися кейси
+            </ActionLink>
           </div>
         </div>
         <div className={s.person}>

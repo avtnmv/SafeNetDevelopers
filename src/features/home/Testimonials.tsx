@@ -17,19 +17,15 @@ function Stars() {
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className={s.section}>
-      <SectionHeading label="Відгуки" title="Відгуки." count="©2025" />
+    <section id="testimonials" tabIndex={-1} data-anchor-target className={s.section}>
+      <SectionHeading label="Відгуки" title="Відгуки." />
       <div className={s.reviews}>
         <div className={s.rating} data-reveal="fade">
           <div className={s.ratingIntro}>
-            <strong>
-              <Counter value={4.9} decimals={1} />
-              <small>/5</small>
-            </strong>
             <p>
               Ми реалізували{' '}
               <b>
-                <Counter value={56} suffix="+" /> проєктів
+                <Counter value={50} suffix="+" /> проєктів
               </b>
               , які допомагають компаніям отримувати реальні результати.
             </p>
@@ -38,10 +34,15 @@ export function Testimonials() {
             <p className={s.brand}>{site.name}</p>
             <div className={s.trust}>
               <div className={s.avatars} aria-hidden="true">
-                {['team-1', 'team-2', 'team-3', 'team-4'].map((name) => (
+                {[
+                  'review-avatar-1',
+                  'review-avatar-city',
+                  'review-avatar-cafe',
+                  'review-avatar-4',
+                ].map((name) => (
                   <Image
                     key={name}
-                    src={`/media/${name}.jpg`}
+                    src={`/media/${name}.webp`}
                     alt=""
                     width={38}
                     height={38}
@@ -49,7 +50,7 @@ export function Testimonials() {
                   />
                 ))}
                 <span>
-                  <Counter value={56} suffix="+" />
+                  <Counter value={50} suffix="+" />
                 </span>
               </div>
               <div>

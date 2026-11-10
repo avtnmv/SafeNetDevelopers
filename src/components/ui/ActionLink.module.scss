@@ -1,0 +1,40 @@
+@use '@/styles/mixins' as *;
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  transition:
+    background var(--motion),
+    border-color var(--motion);
+  svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+  }
+  @include focus;
+}
+.primaryAction {
+  background: white;
+  color: var(--ink);
+  @include button-feedback($light: true);
+}
+.secondaryAction {
+  background: transparent;
+  border-color: rgb(255 255 255 / 40%);
+  color: white;
+  @include hover {
+    border-color: white;
+    background: white;
+    color: var(--ink);
+    box-shadow: 0 4px 16px rgb(255 255 255 / 25%);
+  }
+}

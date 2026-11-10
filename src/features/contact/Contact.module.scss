@@ -87,6 +87,7 @@
     }
   }
   button {
+    @include button-feedback;
     min-height: 58px;
     flex-shrink: 0;
     border: 0;
@@ -104,46 +105,95 @@
   display: grid;
   gap: 16px;
 }
-.brand {
-  font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 16px;
-  letter-spacing: -0.05em;
+.form .consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--muted);
+
+  input {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    accent-color: var(--ink);
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  a {
+    font-weight: 500;
+  }
 }
 .status {
+  &:empty {
+    display: none;
+  }
   font-size: 12px;
   line-height: 1.3;
   color: var(--muted);
 }
-.copyright {
-  font-size: 12px;
-  opacity: 0.8;
-}
 .copy {
+  min-width: 0;
+  container-type: inline-size;
   padding: 0 0 0 40px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 56px;
   align-items: start;
   h2 {
-    font-size: clamp(58px, 8vw, 144px);
+    font-size: min(144px, 17cqw);
     letter-spacing: -0.06em;
-    line-height: 0.94;
-    overflow-wrap: anywhere;
+    line-height: 0.8;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
   }
-  > p {
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+}
+.copyIntro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  p {
     font-size: 22px;
     max-width: 420px;
   }
-  > div {
-    max-width: 340px;
-  }
+}
+.copyBenefits {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 340px;
+}
+.benefitIcon {
+  display: block;
+  flex-shrink: 0;
+}
+.copyBenefit {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   h3 {
     font-size: 18px;
-    margin-bottom: 10px;
   }
-  > a {
-    margin-top: auto;
+  p {
+    opacity: 0.75;
   }
 }
 @include tablet {
@@ -178,9 +228,8 @@
   }
   .copy {
     padding: 0;
-    gap: 28px;
     h2 {
-      font-size: clamp(48px, 12vw, 72px);
+      font-size: min(72px, 17cqw);
     }
   }
 }

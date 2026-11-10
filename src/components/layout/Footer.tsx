@@ -1,14 +1,8 @@
 import { BrandLogo } from '@/components/ui/BrandLogo';
+import { ArrowUpRight } from '@/components/ui/ArrowUpRight';
 import { AnchorLink } from '@/components/navigation/AnchorLink';
-import { site, socialLinks } from '@/config/site';
+import { navigation, site, socialLinks } from '@/config/site';
 import s from './Footer.module.scss';
-
-const footerNavigation = [
-  { href: '/#main', label: 'Головна' },
-  { href: '/studio', label: 'Студія' },
-  { href: '/projects', label: 'Проєкти' },
-  { href: '/#contact', label: 'Контакти' },
-];
 
 export function Footer() {
   return (
@@ -38,7 +32,7 @@ export function Footer() {
         </div>
         <nav className={s.navigation} aria-label="Навігація у футері">
           <p className={s.label}>Навігація</p>
-          {footerNavigation.map((item) => (
+          {navigation.map((item) => (
             <AnchorLink key={item.href} href={item.href}>
               {item.label}
             </AnchorLink>
@@ -55,22 +49,28 @@ export function Footer() {
               rel="noopener noreferrer"
             >
               {label}
-              <span aria-hidden="true">↗</span>
+              <ArrowUpRight />
             </a>
           ))}
         </div>
-        <AnchorLink className={s.wordmark} href="/#main" aria-label="SafeNet Developers — головна">
-          <BrandLogo />
-        </AnchorLink>
-      </div>
-      <div className={s.bottom}>
-        <small>
-          © {new Date().getFullYear()} {site.name}. Усі права захищені.
-        </small>
-        <nav aria-label="Правова інформація">
-          <AnchorLink href="/legal/privacy-policy">Політика конфіденційності</AnchorLink>
-          <AnchorLink href="/legal/terms-of-service">Умови використання</AnchorLink>
-        </nav>
+        <div className={s.brand}>
+          <AnchorLink
+            className={s.wordmark}
+            href="/#main"
+            aria-label="SafeNet Developers — головна"
+          >
+            <BrandLogo />
+          </AnchorLink>
+          <div className={s.legal}>
+            <small>
+              © {new Date().getFullYear()} {site.name}. Усі права захищені.
+            </small>
+            <nav aria-label="Правова інформація">
+              <AnchorLink href="/legal/privacy-policy">Політика конфіденційності</AnchorLink>
+              <AnchorLink href="/legal/terms-of-service">Умови використання</AnchorLink>
+            </nav>
+          </div>
+        </div>
       </div>
     </footer>
   );

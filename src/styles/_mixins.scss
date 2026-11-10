@@ -21,3 +21,28 @@
     outline-offset: 5px;
   }
 }
+
+@mixin button-feedback($light: false) {
+  transition:
+    background var(--motion),
+    color var(--motion),
+    border-color var(--motion),
+    box-shadow var(--motion);
+
+  @include hover {
+    @if $light {
+      background: #ccc;
+      color: #090909;
+      box-shadow: 0 4px 16px rgb(255 255 255 / 25%);
+    } @else {
+      background: #555;
+      color: white;
+      box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+    }
+  }
+
+  @include focus;
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}

@@ -130,16 +130,14 @@
 }
 .images {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
+  align-self: start;
   img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-  img + img {
-    margin-left: -42px;
-    box-shadow: -10px 0 23px -3px #0006;
+    display: block;
+    flex: 0 0 120px;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
   }
 }
 .description {
@@ -180,11 +178,6 @@
     font-weight: 600;
     line-height: 12px;
     letter-spacing: -0.04em;
-  }
-  li.count {
-    color: white;
-    background: #272727;
-    font-weight: 400;
   }
 }
 .action {

@@ -12,22 +12,10 @@
   color: white;
   font-size: 14px;
   letter-spacing: -0.03em;
-  transition:
-    background var(--motion),
-    gap var(--motion);
-  span {
-    font-size: 18px;
-    line-height: 1;
-  }
-  @include hover {
-    background: #333;
-    gap: 42px;
-  }
+  @include button-feedback;
 }
 .inverse {
   background: white;
   color: var(--ink);
-  @include hover {
-    background: #ddd;
-  }
+  @include button-feedback($light: true);
 }

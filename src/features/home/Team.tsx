@@ -1,14 +1,13 @@
 import type { CSSProperties } from 'react';
 import Image from 'next/image';
 import { team } from '@/lib/content';
-import { Button } from '@/components/ui/Button';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import s from './Team.module.scss';
 
 export function Team() {
   return (
     <section className={s.section}>
-      <SectionHeading label="SafeNet Developers" title="Люди за нашими проєктами." compact />
+      <SectionHeading label="Наша команда" title="Люди за нашими проєктами." compact />
       <div className={s.team}>
         {team.map((person, index) => (
           <article
@@ -35,10 +34,6 @@ export function Team() {
             <p>{person.description}</p>
           </article>
         ))}
-      </div>
-      <div className={s.teamCallout} data-reveal="fade">
-        <p>Ми віримо, що найкращі результати народжуються у співпраці.</p>
-        <Button href="mailto:Info@safenet.org.ua">Приєднатися</Button>
       </div>
     </section>
   );

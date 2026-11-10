@@ -1,9 +1,9 @@
 export const navigation = [
-  { href: '/#main', label: 'Головна' },
-  { href: '/studio', label: 'Студія' },
-  { href: '/projects', label: 'Проєкти' },
-  { href: '/#services', label: 'Послуги' },
-  { href: '/#pricing', label: 'Вартість' },
+  { href: '/#projects', label: 'Проєкти' },
+  { href: '/#advantages', label: 'Чому обирають нас' },
+  { href: '/#services', label: 'Наші послуги' },
+  { href: '/#testimonials', label: 'Відгуки' },
+  { href: '/#pricing', label: 'Ціни' },
   { href: '/#faq', label: 'Запитання' },
   { href: '/#contact', label: 'Контакти' },
 ] as const;

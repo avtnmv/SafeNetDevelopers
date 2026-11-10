@@ -4,10 +4,10 @@
   background: var(--page);
 }
 .main {
-  padding: 0 var(--gutter) 100px;
+  padding: 0 var(--gutter) 56px;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 110px 4px;
+  gap: 48px 4px;
 }
 .contacts {
   display: flex;
@@ -66,30 +66,31 @@
     color: #aaa;
   }
 }
-.wordmark {
+.brand {
   grid-column: 2 / -1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.wordmark {
   display: block;
   width: 100%;
   max-width: 800px;
 }
-.bottom {
-  background: #090909;
-  color: white;
-  padding: 46px var(--gutter);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
+.legal {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  font-size: 14px;
+  gap: 24px;
+  color: #686868;
+  font-size: 12px;
+  line-height: 1.5;
   small {
-    color: #999;
-    font-size: 14px;
+    font-size: inherit;
   }
   nav {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    display: contents;
   }
   a {
     transition: opacity 180ms;
@@ -100,11 +101,8 @@
 }
 @include tablet {
   .main {
-    gap: 80px 4px;
-    padding-bottom: 80px;
-  }
-  .bottom nav {
-    gap: 20px;
+    gap: 48px 4px;
+    padding-bottom: 48px;
   }
 }
 @include mobile {
@@ -114,7 +112,7 @@
   .main {
     grid-template-columns: 1fr 1fr;
     gap: 40px 20px;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
   }
   .contacts {
     grid-column: 1 / -1;
@@ -126,26 +124,13 @@
   .socialItem {
     font-size: 20px;
   }
-  .wordmark {
+  .brand {
     grid-column: 1 / -1;
-    margin-top: 20px;
-  }
-  .bottom {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding-block: 30px;
-    small {
-      font-size: 12px;
-    }
-    nav {
-      gap: 14px 24px;
-      font-size: 12px;
-    }
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .navigation > a,
-  .bottom a {
+  .legal a {
     transition: none;
   }
 }

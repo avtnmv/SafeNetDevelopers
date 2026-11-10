@@ -23,22 +23,7 @@
   gap: 80px;
 }
 .ratingIntro {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 24px;
-  > strong {
-    font-size: 56px;
-    line-height: 1;
-    font-weight: 600;
-    letter-spacing: -0.06em;
-    white-space: nowrap;
-  }
-  small {
-    font-size: 16px;
-    font-weight: 400;
-    color: #777;
-    letter-spacing: -0.03em;
-  }
+  text-align: left;
   > p {
     font-size: 16px;
     line-height: 1.4;
@@ -107,10 +92,7 @@
   font-size: 18px;
   font-weight: 500;
   text-decoration: none;
-  transition: background 200ms;
-  @include hover {
-    background: #333;
-  }
+  @include button-feedback;
 }
 .review {
   margin: 0;

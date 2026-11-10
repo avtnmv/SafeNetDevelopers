@@ -1,44 +1,39 @@
+import { ArrowUpRight } from '@/components/ui/ArrowUpRight';
 import type { CSSProperties } from 'react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Button } from '@/components/ui/Button';
+import { ActionLink } from '@/components/ui/ActionLink';
 import s from './Process.module.scss';
 
 const steps = [
   {
     title: 'Знайомимося з вашим бізнесом',
-    label: '15 хвилин',
     description:
       'Безкоштовна консультація: обговорюємо ваші цілі, аудиторію та завдання сайту. Замість довгого брифу — жива розмова.',
   },
   {
-    title: 'Показуємо перший варіант',
-    label: 'Від ідеї до сайту',
+    title: 'Узгоджуємо дизайн',
     description:
       'Узгоджуємо стилістику, складаємо структуру та показуємо робочий сайт. Ви одразу бачите, як усе виглядає і працює.',
   },
   {
     title: 'Збираємо матеріали',
-    label: 'Усе важливе — поруч',
     description:
       'Від вас — фото, послуги та контакти. Ми допомагаємо з текстами, формулюємо переваги й наповнюємо сторінки.',
   },
   {
     title: 'Вносимо правки',
-    label: 'Разом до результату',
     description:
       'Уточнюємо деталі прямо на живому сайті. Ви бачите зміни, залишаєте побажання й погоджуєте фінальний результат.',
   },
   {
     title: 'Передаємо сайт і доступи',
-    label: 'Прозорий фінал',
     description:
-      'Сплачуєте решту 50%, коли сайт готовий. Передаємо доступи та пояснюємо, як змінювати тексти, фото й інше наповнення.',
+      'Коли сайт готовий і погоджений, ви сплачуєте решту 50% та отримуєте всі доступи. Сайт повністю належить вам.',
   },
   {
-    title: 'Запускаємо проєкт у роботу',
-    label: 'Початок нового етапу',
+    title: 'Запускаємо проєкт',
     description:
-      'Підключаємо домен, перевіряємо форми та налаштовуємо отримання заявок. Залишаємося на зв’язку після запуску.',
+      'Перед запуском сайт перевіряє фахівець із кібербезпеки. Усуваємо виявлені вразливості, підключаємо домен і налаштовуємо отримання заявок. Залишаємося на зв’язку після запуску.',
   },
 ];
 
@@ -62,7 +57,7 @@ function Preview({ step }: { step: number }) {
         <div className={s.browserBar}>
           <span>•••</span>
           <small>вашсайт.com.ua</small>
-          <span>↗</span>
+          <ArrowUpRight />
         </div>
         <div className={s.browserBody}>
           <div>
@@ -76,7 +71,9 @@ function Preview({ step }: { step: number }) {
               <i />
               <i />
             </div>
-            <span className={s.miniButton}>Почнімо ↗</span>
+            <span className={s.miniButton}>
+              Почнімо <ArrowUpRight />
+            </span>
           </div>
           <div className={s.art}>
             <span />
@@ -99,7 +96,7 @@ function Preview({ step }: { step: number }) {
           ['↗', 'Контакти', 'Пошта, телефон, соцмережі'],
         ].map(([icon, title, text]) => (
           <div key={title}>
-            <span className={s.fileIcon}>{icon}</span>
+            <span className={s.fileIcon}>{icon === '↗' ? <ArrowUpRight /> : icon}</span>
             <p>
               <b>{title}</b>
               <small>{text}</small>
@@ -107,7 +104,6 @@ function Preview({ step }: { step: number }) {
             <span>✓</span>
           </div>
         ))}
-        <span className={s.materialNote}>↗ Тексти допоможемо написати</span>
       </div>
     );
   if (step === 3)
@@ -149,7 +145,9 @@ function Preview({ step }: { step: number }) {
           <span>Аванс сплачено</span>
           <span>Залишок</span>
         </div>
-        <div className={s.access}>↗ Сайт і доступи — ваші</div>
+        <div className={s.access}>
+          <ArrowUpRight /> Сайт і доступи — ваші
+        </div>
       </div>
     );
   return (
@@ -157,7 +155,7 @@ function Preview({ step }: { step: number }) {
       <div className={s.admin}>
         <div className={s.panelTitle}>
           <b>Ваш сайт</b>
-          <span>↗</span>
+          <ArrowUpRight />
         </div>
         <div className={s.lines}>
           <i />
@@ -166,7 +164,9 @@ function Preview({ step }: { step: number }) {
         </div>
       </div>
       <div className={s.notification}>
-        <span className={s.send}>↗</span>
+        <span className={s.send}>
+          <ArrowUpRight />
+        </span>
         <p>
           <b>Нова заявка із сайту!</b>
           <small>Олена хоче обговорити проєкт</small>
@@ -181,17 +181,12 @@ function Preview({ step }: { step: number }) {
 export function Process() {
   return (
     <section id="process" className={s.section}>
-      <SectionHeading
-        label="Про нас"
-        title="Як ми запускаємо сайти та маркетингові кампанії"
-        compact
-      />
+      <SectionHeading label="Наш підхід" title="Як ми запускаємо сайти за 6 кроків" compact />
       <div className={s.intro} data-reveal="fade">
         <p>
           Поєднуємо творчість, технології та стратегію, щоб перетворити вашу ідею на працюючий
           цифровий продукт.
         </p>
-        <span>6 кроків. Один спільний результат.</span>
       </div>
       <div className={s.process}>
         {steps.map((step, index) => (
@@ -206,7 +201,6 @@ export function Process() {
             <div className={s.cardCopy}>
               <div className={s.stepMeta}>
                 <span>(0{index + 1})</span>
-                <span>{step.label}</span>
               </div>
               <h3>{step.title}</h3>
               <p>{step.description}</p>
@@ -216,7 +210,7 @@ export function Process() {
       </div>
       <div className={s.action}>
         <p>Ваш наступний крок — просто розповісти нам про ідею.</p>
-        <Button href="/#contact">Обговорити проєкт</Button>
+        <ActionLink href="/#contact">Обговорити проєкт</ActionLink>
       </div>
     </section>
   );
