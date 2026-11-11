@@ -1,13 +1,15 @@
+import { preload } from 'react-dom';
 import { assets } from '@/lib/content';
 import { IntroVideo } from './IntroVideo';
 import { ActionLink } from '@/components/ui/ActionLink';
 import { HeroVideo } from './HeroVideo';
 import s from './Hero.module.scss';
 export function Hero() {
+  preload('/media/hero-poster-v2.webp', { as: 'image', fetchPriority: 'high' });
   return (
     <section className={s.hero} aria-label="SafeNet Developers — цифрова студія">
       <div className={s.media} aria-hidden="true">
-        <HeroVideo src={assets.heroVideo} className={s.background} />
+        <HeroVideo src={assets.heroVideo} className={s.background} priority />
       </div>
       <div className={s.top}>
         <h1 className={s.wordmark}>

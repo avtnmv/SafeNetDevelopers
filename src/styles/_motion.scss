@@ -27,14 +27,12 @@ html[data-motion='ready'] {
     display: inline-block;
     transition:
       opacity 800ms var(--reveal-ease),
-      transform 1000ms var(--reveal-ease),
-      filter 800ms var(--reveal-ease);
+      transform 1000ms var(--reveal-ease);
     transition-delay: min(calc(var(--word-index, 0) * 35ms), 245ms);
   }
   [data-reveal='words']:not(.is-visible) [data-word] {
     opacity: 0;
     transform: translate3d(0, 28px, 0);
-    filter: blur(6px);
   }
 }
 

@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { legal } from '@/lib/content';
@@ -10,7 +11,13 @@ export function generateStaticParams() {
 }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  return { title: legal.find((p) => p.slug === slug)?.title };
+  const page = legal.find((p) => p.slug === slug);
+  if (!page) return { title: 'Сторінку не знайдено', robots: { index: false } };
+  const description =
+    slug === 'privacy-policy'
+      ? 'Як SafeNet Developers обробляє та захищає персональні дані відвідувачів сайту.'
+      : 'Умови використання сайту SafeNet Developers та загальні правила взаємодії.';
+  return pageMetadata(page.title, description, '/legal/' + slug);
 }
 export default async function LegalPage({ params }: Props) {
   const { slug } = await params;

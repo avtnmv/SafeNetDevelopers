@@ -9,8 +9,10 @@ export const navigation = [
 ] as const;
 export const site = {
   name: 'SafeNet Developers',
-  telegram: '',
-  description: 'Вебдизайн, розробка сайтів, брендинг і цифровий маркетинг.',
+  url: 'https://safenet-developers.com',
+  telegram: 'https://t.me/safenet_developers',
+  description:
+    'Сайт для бізнесу за 3 дні: дизайн, тексти, розробка та перевірка безпеки. Фіксовані пакети $300 і $500. Договір, оплата 50/50, домен і доступи — ваші.',
   email: 'Info@safenet.org.ua',
   phone: '(312) 555-2468',
   phoneHref: 'tel:5556667777',

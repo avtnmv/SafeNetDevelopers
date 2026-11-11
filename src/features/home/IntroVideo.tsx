@@ -31,9 +31,11 @@ export function IntroVideo() {
   const host = useRef<HTMLDivElement>(null);
   const player = useRef<Player | null>(null);
   const [ready, setReady] = useState(false);
+  const [warm, setWarm] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
   const [failed, setFailed] = useState(false);
   useEffect(() => {
+    if (!warm) return;
     let disposed = false;
     loadApi()
       .then(() => {
@@ -42,7 +44,7 @@ export function IntroVideo() {
         host.current.appendChild(element);
         player.current = new (window as VideoWindow).YT!.Player(element, {
           host: 'https://www.youtube-nocookie.com',
-          videoId: 'Z7qsCoc7E7w',
+          videoId: 'KW1zcFX7kwg',
           playerVars: { playsinline: 1, rel: 0, origin: window.location.origin },
           events: {
             onReady: () => {
@@ -68,8 +70,9 @@ export function IntroVideo() {
       player.current?.destroy();
       player.current = null;
     };
-  }, []);
+  }, [warm]);
   function open() {
+    setWarm(true);
     dialog.current?.showModal();
     player.current?.playVideo();
   }
@@ -84,6 +87,8 @@ export function IntroVideo() {
           type="button"
           className={s.thumbnail}
           onClick={open}
+          onPointerEnter={() => setWarm(true)}
+          onFocus={() => setWarm(true)}
           aria-label="Відтворити відео про SafeNet Developers"
         >
           <span className={s.play}>
@@ -99,7 +104,13 @@ export function IntroVideo() {
               Детально про процес роботи, формування ціни та реалізацію.
             </p>
           </div>
-          <button className={s.watch} type="button" onClick={open}>
+          <button
+            className={s.watch}
+            type="button"
+            onClick={open}
+            onPointerEnter={() => setWarm(true)}
+            onFocus={() => setWarm(true)}
+          >
             Дивитися відео
           </button>
         </div>
@@ -122,7 +133,7 @@ export function IntroVideo() {
         )}
         <a
           className={s.external}
-          href="https://youtube.com/shorts/Z7qsCoc7E7w"
+          href="https://youtube.com/shorts/KW1zcFX7kwg"
           target="_blank"
           rel="noopener noreferrer"
         >

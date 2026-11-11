@@ -2,25 +2,6 @@
   margin-top: var(--section-space);
   padding: 0 var(--gutter);
 }
-.trust {
-  list-style: none;
-  padding: 30px var(--gutter);
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  border-bottom: 1px solid #ddd;
-  font-size: 13px;
-  line-height: 1.4;
-  li {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
-  span {
-    font-size: 24px;
-  }
-}
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -69,10 +50,6 @@
   }
 }
 @media (max-width: 809px) {
-  .trust {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
   .grid {
     grid-template-columns: 1fr;
   }

@@ -3,7 +3,7 @@ import s from './LogoMarquee.module.scss';
 
 export function LogoMarquee({ logos }: { logos: string[] }) {
   return (
-    <div className={s.marquee}>
+    <div className={s.marquee} data-ambient>
       <input
         id="client-logos-pause"
         type="checkbox"

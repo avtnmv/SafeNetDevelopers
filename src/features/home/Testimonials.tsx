@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { ResponsiveImage as Image } from '@/components/ui/ResponsiveImage';
 import type { CSSProperties } from 'react';
 import { AnchorLink } from '@/components/navigation/AnchorLink';
 import { SectionHeading } from '@/components/ui/SectionHeading';

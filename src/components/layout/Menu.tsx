@@ -123,7 +123,9 @@ export function Menu() {
           ))}
         </nav>
         <div className={s.menuBottom}>
-          <a href={site.phoneHref}>{site.phone}</a>
+          <a href={site.telegram} target="_blank" rel="noopener noreferrer">
+            @safenet_developers
+          </a>
           <a href={`mailto:${site.email}`}>{site.email}</a>
           <AnchorLink href="/legal/privacy-policy" beforeNavigate={close}>
             Політика конфіденційності

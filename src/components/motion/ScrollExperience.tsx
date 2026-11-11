@@ -12,6 +12,30 @@ export function ScrollExperience() {
   const scroll = useRef<Lenis | null>(null);
 
   useEffect(() => {
+    const targets = document.querySelectorAll<HTMLElement>('[data-ambient]');
+    const visible = new Set<Element>();
+    const sync = () =>
+      targets.forEach((element) => {
+        element.dataset.active = String(visible.has(element) && !document.hidden);
+      });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) visible.add(entry.target);
+        else visible.delete(entry.target);
+      });
+      sync();
+    });
+    targets.forEach((element) => observer.observe(element));
+    sync();
+    document.addEventListener('visibilitychange', sync);
+    return () => {
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', sync);
+      targets.forEach((element) => delete element.dataset.active);
+    };
+  }, [pathname]);
+
+  useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     const finePointer = window.matchMedia('(pointer: fine)');
     let generation = 0;
@@ -20,7 +44,7 @@ export function ScrollExperience() {
       const current = ++generation;
       scroll.current?.destroy();
       scroll.current = null;
-      if (reduced.matches || !finePointer.matches) return;
+      if (reduced.matches || !finePointer.matches || navigator.hardwareConcurrency <= 2) return;
 
       const { default: Lenis } = await import('lenis');
       if (current !== generation) return;
@@ -34,14 +58,21 @@ export function ScrollExperience() {
         stopInertiaOnNavigate: true,
         prevent: (node) => node.tagName === 'TEXTAREA' || node.hasAttribute('data-scroll-native'),
       });
-      if (document.documentElement.dataset.menuOpen === 'true') scroll.current.stop();
+      syncScroll();
     }
 
+    function syncScroll() {
+      if (document.hidden || document.documentElement.dataset.menuOpen === 'true')
+        scroll.current?.stop();
+      else scroll.current?.start();
+    }
     function onMenu(event: Event) {
-      if ((event as CustomEvent<{ open: boolean }>).detail.open) scroll.current?.stop();
+      if ((event as CustomEvent<{ open: boolean }>).detail.open || document.hidden)
+        scroll.current?.stop();
       else scroll.current?.start();
     }
     document.addEventListener('site:menu', onMenu);
+    document.addEventListener('visibilitychange', syncScroll);
     void configure();
     reduced.addEventListener('change', configure);
     finePointer.addEventListener('change', configure);
@@ -52,6 +83,7 @@ export function ScrollExperience() {
       reduced.removeEventListener('change', configure);
       finePointer.removeEventListener('change', configure);
       document.removeEventListener('site:menu', onMenu);
+      document.removeEventListener('visibilitychange', syncScroll);
     };
   }, []);
 

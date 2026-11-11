@@ -52,12 +52,13 @@ export default function ChatPlayback({ visible }: { visible: boolean }) {
 
   useEffect(() => {
     const element = scroll.current;
-    if (element && !reduced) element.scrollTo({ top: element.scrollHeight, behavior: 'smooth' });
-  }, [shown, typing, reduced]);
+    if (element && visible && !hidden && !reduced)
+      element.scrollTo({ top: element.scrollHeight, behavior: 'smooth' });
+  }, [shown, typing, reduced, visible, hidden]);
 
   return (
     <>
-      <div className={s.phone}>
+      <div className={s.phone} data-playing={visible && !hidden && !reduced}>
         <div className={s.screen}>
           <div className={s.status} aria-hidden="true">
             <span>9:41</span>

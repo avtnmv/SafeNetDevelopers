@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import Image from 'next/image';
+import { ResponsiveImage as Image } from '@/components/ui/ResponsiveImage';
 import { team } from '@/lib/content';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import s from './Team.module.scss';

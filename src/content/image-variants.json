@@ -1,0 +1,1020 @@
+{
+  "/media/boltshift-cover.jpg": {
+    "width": 750,
+    "height": 540,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/74e40159a6b8dcc6-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/74e40159a6b8dcc6-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/74e40159a6b8dcc6-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/74e40159a6b8dcc6-640.webp"
+      },
+      {
+        "width": 750,
+        "src": "/media/responsive/74e40159a6b8dcc6-750.webp"
+      }
+    ]
+  },
+  "/media/cloudwatch-cover.jpg": {
+    "width": 750,
+    "height": 540,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/79fa9cd0a3019cea-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/79fa9cd0a3019cea-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/79fa9cd0a3019cea-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/79fa9cd0a3019cea-640.webp"
+      },
+      {
+        "width": 750,
+        "src": "/media/responsive/79fa9cd0a3019cea-750.webp"
+      }
+    ]
+  },
+  "/media/code img.png": {
+    "width": 345,
+    "height": 345,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/dcbc7de0c22b385a-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/dcbc7de0c22b385a-320.webp"
+      },
+      {
+        "width": 345,
+        "src": "/media/responsive/dcbc7de0c22b385a-345.webp"
+      }
+    ]
+  },
+  "/media/cyber security img.png": {
+    "width": 317,
+    "height": 345,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/cd4a8b688799bed7-96.webp"
+      },
+      {
+        "width": 317,
+        "src": "/media/responsive/cd4a8b688799bed7-317.webp"
+      }
+    ]
+  },
+  "/media/dasp-bureau-cover.png": {
+    "width": 750,
+    "height": 547,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/13d7b7d8a8ae0050-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/13d7b7d8a8ae0050-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/13d7b7d8a8ae0050-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/13d7b7d8a8ae0050-640.webp"
+      },
+      {
+        "width": 750,
+        "src": "/media/responsive/13d7b7d8a8ae0050-750.webp"
+      }
+    ]
+  },
+  "/media/design img.png": {
+    "width": 341,
+    "height": 345,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/ec642f3661d7a2a5-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/ec642f3661d7a2a5-320.webp"
+      },
+      {
+        "width": 341,
+        "src": "/media/responsive/ec642f3661d7a2a5-341.webp"
+      }
+    ]
+  },
+  "/media/ephemeral-cover.jpg": {
+    "width": 750,
+    "height": 540,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/5e19b60ed55bceda-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/5e19b60ed55bceda-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/5e19b60ed55bceda-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/5e19b60ed55bceda-640.webp"
+      },
+      {
+        "width": 750,
+        "src": "/media/responsive/5e19b60ed55bceda-750.webp"
+      }
+    ]
+  },
+  "/media/hero-poster.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/69515757105d3fcb-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/69515757105d3fcb-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/69515757105d3fcb-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/69515757105d3fcb-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/media/responsive/69515757105d3fcb-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/media/responsive/69515757105d3fcb-1280.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/media/responsive/69515757105d3fcb-1600.webp"
+      }
+    ]
+  },
+  "/media/hotel-insights-cover.png": {
+    "width": 750,
+    "height": 547,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/6730211fd9d98d9b-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/6730211fd9d98d9b-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/6730211fd9d98d9b-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/6730211fd9d98d9b-640.webp"
+      },
+      {
+        "width": 750,
+        "src": "/media/responsive/6730211fd9d98d9b-750.webp"
+      }
+    ]
+  },
+  "/media/identity-space-cover.png": {
+    "width": 750,
+    "height": 547,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/2fb6b4de319bdb57-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/2fb6b4de319bdb57-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/2fb6b4de319bdb57-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/2fb6b4de319bdb57-640.webp"
+      },
+      {
+        "width": 750,
+        "src": "/media/responsive/2fb6b4de319bdb57-750.webp"
+      }
+    ]
+  },
+  "/media/mastermail-cover.jpg": {
+    "width": 750,
+    "height": 540,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/09517f5f11153190-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/09517f5f11153190-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/09517f5f11153190-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/09517f5f11153190-640.webp"
+      },
+      {
+        "width": 750,
+        "src": "/media/responsive/09517f5f11153190-750.webp"
+      }
+    ]
+  },
+  "/media/pablos-academy-cover.png": {
+    "width": 750,
+    "height": 547,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/7d29376d984e6e5a-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/7d29376d984e6e5a-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/7d29376d984e6e5a-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/7d29376d984e6e5a-640.webp"
+      },
+      {
+        "width": 750,
+        "src": "/media/responsive/7d29376d984e6e5a-750.webp"
+      }
+    ]
+  },
+  "/media/powersurge-cover.jpg": {
+    "width": 750,
+    "height": 540,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/d76b6903ce9eb20a-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/d76b6903ce9eb20a-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/d76b6903ce9eb20a-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/d76b6903ce9eb20a-640.webp"
+      },
+      {
+        "width": 750,
+        "src": "/media/responsive/d76b6903ce9eb20a-750.webp"
+      }
+    ]
+  },
+  "/media/process-1.jpg": {
+    "width": 77,
+    "height": 77,
+    "variants": [
+      {
+        "width": 77,
+        "src": "/media/responsive/34a88523087c99d6-77.webp"
+      }
+    ]
+  },
+  "/media/process-2.jpg": {
+    "width": 77,
+    "height": 77,
+    "variants": [
+      {
+        "width": 77,
+        "src": "/media/responsive/302b0f6f60874735-77.webp"
+      }
+    ]
+  },
+  "/media/process-3.jpg": {
+    "width": 77,
+    "height": 77,
+    "variants": [
+      {
+        "width": 77,
+        "src": "/media/responsive/aaa5b114193cabba-77.webp"
+      }
+    ]
+  },
+  "/media/process-4.jpg": {
+    "width": 77,
+    "height": 77,
+    "variants": [
+      {
+        "width": 77,
+        "src": "/media/responsive/f96e1808623f1102-77.webp"
+      }
+    ]
+  },
+  "/media/review-avatar-1.webp": {
+    "width": 152,
+    "height": 152,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/a1b78b886d31caa9-96.webp"
+      },
+      {
+        "width": 152,
+        "src": "/media/responsive/a1b78b886d31caa9-152.webp"
+      }
+    ]
+  },
+  "/media/review-avatar-2.webp": {
+    "width": 152,
+    "height": 152,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/a38cb7bbc3423a09-96.webp"
+      },
+      {
+        "width": 152,
+        "src": "/media/responsive/a38cb7bbc3423a09-152.webp"
+      }
+    ]
+  },
+  "/media/review-avatar-3.webp": {
+    "width": 152,
+    "height": 152,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/93ae15bdd3a9c284-96.webp"
+      },
+      {
+        "width": 152,
+        "src": "/media/responsive/93ae15bdd3a9c284-152.webp"
+      }
+    ]
+  },
+  "/media/review-avatar-4.webp": {
+    "width": 152,
+    "height": 152,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/758eefc6c29c7f73-96.webp"
+      },
+      {
+        "width": 152,
+        "src": "/media/responsive/758eefc6c29c7f73-152.webp"
+      }
+    ]
+  },
+  "/media/review-avatar-cafe.webp": {
+    "width": 152,
+    "height": 152,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/d0463166e36e0d01-96.webp"
+      },
+      {
+        "width": 152,
+        "src": "/media/responsive/d0463166e36e0d01-152.webp"
+      }
+    ]
+  },
+  "/media/review-avatar-city.webp": {
+    "width": 152,
+    "height": 152,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/cd941a8c0d1255a5-96.webp"
+      },
+      {
+        "width": 152,
+        "src": "/media/responsive/cd941a8c0d1255a5-152.webp"
+      }
+    ]
+  },
+  "/media/safenet-logo-square.png": {
+    "width": 512,
+    "height": 512,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/5423a2e7e0ae2e28-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/5423a2e7e0ae2e28-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/5423a2e7e0ae2e28-480.webp"
+      },
+      {
+        "width": 512,
+        "src": "/media/responsive/5423a2e7e0ae2e28-512.webp"
+      }
+    ]
+  },
+  "/media/safenet-og.png": {
+    "width": 1200,
+    "height": 630,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/1c9ae5ae475e8c35-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/1c9ae5ae475e8c35-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/1c9ae5ae475e8c35-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/1c9ae5ae475e8c35-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/media/responsive/1c9ae5ae475e8c35-960.webp"
+      },
+      {
+        "width": 1200,
+        "src": "/media/responsive/1c9ae5ae475e8c35-1200.webp"
+      }
+    ]
+  },
+  "/media/safenet-security-cover.png": {
+    "width": 750,
+    "height": 547,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/6cd20861c7ba76df-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/6cd20861c7ba76df-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/6cd20861c7ba76df-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/6cd20861c7ba76df-640.webp"
+      },
+      {
+        "width": 750,
+        "src": "/media/responsive/6cd20861c7ba76df-750.webp"
+      }
+    ]
+  },
+  "/media/seo img.png": {
+    "width": 345,
+    "height": 345,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/420e4c7a655df616-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/420e4c7a655df616-320.webp"
+      },
+      {
+        "width": 345,
+        "src": "/media/responsive/420e4c7a655df616-345.webp"
+      }
+    ]
+  },
+  "/media/service-design-1.jpg": {
+    "width": 140,
+    "height": 140,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/a7b3b8ff113d18aa-96.webp"
+      },
+      {
+        "width": 140,
+        "src": "/media/responsive/a7b3b8ff113d18aa-140.webp"
+      }
+    ]
+  },
+  "/media/service-design-2.jpg": {
+    "width": 140,
+    "height": 140,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/2010586a9d531efc-96.webp"
+      },
+      {
+        "width": 140,
+        "src": "/media/responsive/2010586a9d531efc-140.webp"
+      }
+    ]
+  },
+  "/media/service-design-3.jpg": {
+    "width": 140,
+    "height": 140,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/4143f7480f2bae79-96.webp"
+      },
+      {
+        "width": 140,
+        "src": "/media/responsive/4143f7480f2bae79-140.webp"
+      }
+    ]
+  },
+  "/media/shared-image-1.jpg": {
+    "width": 1520,
+    "height": 930,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/b236e50dc28b927e-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/b236e50dc28b927e-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/b236e50dc28b927e-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/b236e50dc28b927e-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/media/responsive/b236e50dc28b927e-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/media/responsive/b236e50dc28b927e-1280.webp"
+      },
+      {
+        "width": 1520,
+        "src": "/media/responsive/b236e50dc28b927e-1520.webp"
+      }
+    ]
+  },
+  "/media/shared-image-2.jpg": {
+    "width": 1520,
+    "height": 930,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/f6a0e4360aeeeea3-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/f6a0e4360aeeeea3-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/f6a0e4360aeeeea3-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/f6a0e4360aeeeea3-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/media/responsive/f6a0e4360aeeeea3-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/media/responsive/f6a0e4360aeeeea3-1280.webp"
+      },
+      {
+        "width": 1520,
+        "src": "/media/responsive/f6a0e4360aeeeea3-1520.webp"
+      }
+    ]
+  },
+  "/media/shared-image-3.jpg": {
+    "width": 1520,
+    "height": 930,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/3cc1ea8787f4d24c-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/3cc1ea8787f4d24c-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/3cc1ea8787f4d24c-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/3cc1ea8787f4d24c-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/media/responsive/3cc1ea8787f4d24c-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/media/responsive/3cc1ea8787f4d24c-1280.webp"
+      },
+      {
+        "width": 1520,
+        "src": "/media/responsive/3cc1ea8787f4d24c-1520.webp"
+      }
+    ]
+  },
+  "/media/shared-image-4.jpg": {
+    "width": 1137,
+    "height": 918,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/adee62ea238c73be-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/adee62ea238c73be-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/adee62ea238c73be-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/adee62ea238c73be-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/media/responsive/adee62ea238c73be-960.webp"
+      },
+      {
+        "width": 1137,
+        "src": "/media/responsive/adee62ea238c73be-1137.webp"
+      }
+    ]
+  },
+  "/media/shared-image-5.jpg": {
+    "width": 1137,
+    "height": 918,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/66787908f9f69894-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/66787908f9f69894-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/66787908f9f69894-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/66787908f9f69894-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/media/responsive/66787908f9f69894-960.webp"
+      },
+      {
+        "width": 1137,
+        "src": "/media/responsive/66787908f9f69894-1137.webp"
+      }
+    ]
+  },
+  "/media/skyrend-cover.png": {
+    "width": 750,
+    "height": 547,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/6b5a40e297782354-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/6b5a40e297782354-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/6b5a40e297782354-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/6b5a40e297782354-640.webp"
+      },
+      {
+        "width": 750,
+        "src": "/media/responsive/6b5a40e297782354-750.webp"
+      }
+    ]
+  },
+  "/media/studio-team.jpg": {
+    "width": 2277,
+    "height": 1373,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/1649c2f192f8d655-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/1649c2f192f8d655-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/1649c2f192f8d655-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/1649c2f192f8d655-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/media/responsive/1649c2f192f8d655-960.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/media/responsive/1649c2f192f8d655-1280.webp"
+      },
+      {
+        "width": 1600,
+        "src": "/media/responsive/1649c2f192f8d655-1600.webp"
+      }
+    ]
+  },
+  "/media/team-1.jpg": {
+    "width": 375,
+    "height": 540,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/8fc76418adc81a87-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/8fc76418adc81a87-320.webp"
+      },
+      {
+        "width": 375,
+        "src": "/media/responsive/8fc76418adc81a87-375.webp"
+      }
+    ]
+  },
+  "/media/team-2.jpg": {
+    "width": 375,
+    "height": 540,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/c05654d2ed792452-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/c05654d2ed792452-320.webp"
+      },
+      {
+        "width": 375,
+        "src": "/media/responsive/c05654d2ed792452-375.webp"
+      }
+    ]
+  },
+  "/media/team-3.jpg": {
+    "width": 375,
+    "height": 540,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/3813c57722230432-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/3813c57722230432-320.webp"
+      },
+      {
+        "width": 375,
+        "src": "/media/responsive/3813c57722230432-375.webp"
+      }
+    ]
+  },
+  "/media/team-4.jpg": {
+    "width": 375,
+    "height": 540,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/5f42fd2fda5977a2-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/5f42fd2fda5977a2-320.webp"
+      },
+      {
+        "width": 375,
+        "src": "/media/responsive/5f42fd2fda5977a2-375.webp"
+      }
+    ]
+  },
+  "/media/team-danylo.webp": {
+    "width": 900,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/53d1c41ac74aeafa-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/53d1c41ac74aeafa-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/53d1c41ac74aeafa-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/53d1c41ac74aeafa-640.webp"
+      },
+      {
+        "width": 900,
+        "src": "/media/responsive/53d1c41ac74aeafa-900.webp"
+      }
+    ]
+  },
+  "/media/team-lead.jpg": {
+    "width": 170,
+    "height": 216,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/d1bc315f0f1c7956-96.webp"
+      },
+      {
+        "width": 170,
+        "src": "/media/responsive/d1bc315f0f1c7956-170.webp"
+      }
+    ]
+  },
+  "/media/team-mykola.webp": {
+    "width": 900,
+    "height": 1601,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/886fcb4c959a9f39-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/886fcb4c959a9f39-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/886fcb4c959a9f39-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/886fcb4c959a9f39-640.webp"
+      },
+      {
+        "width": 900,
+        "src": "/media/responsive/886fcb4c959a9f39-900.webp"
+      }
+    ]
+  },
+  "/media/team-oleksandr.webp": {
+    "width": 900,
+    "height": 1601,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/6143443c06a011fc-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/6143443c06a011fc-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/6143443c06a011fc-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/6143443c06a011fc-640.webp"
+      },
+      {
+        "width": 900,
+        "src": "/media/responsive/6143443c06a011fc-900.webp"
+      }
+    ]
+  },
+  "/media/team-yaroslav.webp": {
+    "width": 900,
+    "height": 1601,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/0e94243a811abd52-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/0e94243a811abd52-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/0e94243a811abd52-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/0e94243a811abd52-640.webp"
+      },
+      {
+        "width": 900,
+        "src": "/media/responsive/0e94243a811abd52-900.webp"
+      }
+    ]
+  },
+  "/media/warpspeed-cover.jpg": {
+    "width": 750,
+    "height": 540,
+    "variants": [
+      {
+        "width": 96,
+        "src": "/media/responsive/419d45ab560c5d40-96.webp"
+      },
+      {
+        "width": 320,
+        "src": "/media/responsive/419d45ab560c5d40-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/media/responsive/419d45ab560c5d40-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/media/responsive/419d45ab560c5d40-640.webp"
+      },
+      {
+        "width": 750,
+        "src": "/media/responsive/419d45ab560c5d40-750.webp"
+      }
+    ]
+  }
+}

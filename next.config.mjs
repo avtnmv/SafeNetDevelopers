@@ -2,6 +2,7 @@
 const config = {
   agentRules: false,
   poweredByHeader: false,
+  output: 'standalone',
   devIndicators: false,
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -22,6 +23,10 @@ const config = {
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' },
         ],
+      },
+      {
+        source: '/media/responsive/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
     ];
   },

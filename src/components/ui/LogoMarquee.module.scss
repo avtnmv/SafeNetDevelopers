@@ -113,3 +113,7 @@
     }
   }
 }
+
+.marquee[data-active='false'] .track {
+  animation-play-state: paused;
+}

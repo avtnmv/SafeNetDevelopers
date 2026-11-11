@@ -503,33 +503,33 @@
   ],
   "team": [
     {
-      "name": "Данило",
-      "role": "Digital Marketing Specialist",
-      "description": "Розробляє маркетингові стратегії та рекламні кампанії, які допомагають бізнесу знаходити своїх клієнтів.",
+      "name": "Даніїл",
+      "role": "Marketing Director",
+      "description": "Керує напрямом маркетингу: розробляє стратегії та рекламні кампанії, які допомагають бізнесу знаходити своїх клієнтів.",
       "image": "/media/team-danylo.webp"
     },
     {
       "name": "Ярослав",
-      "role": "Full-Stack Developer",
-      "description": "Перетворює ідеї на швидкі та зручні сайти: від інтерфейсу до серверної логіки й інтеграцій.",
+      "role": "Engineering Lead",
+      "description": "Керує розробкою: відповідає за архітектуру, якість коду, швидкість сайтів і надійність інтеграцій.",
       "image": "/media/team-yaroslav.webp"
     },
     {
       "name": "Олександр",
-      "role": "UI/UX Designer",
-      "description": "Створює виразні інтерфейси, поєднуючи візуальний стиль бренду зі зручністю для користувачів.",
+      "role": "Design Lead",
+      "description": "Керує дизайном: формує візуальний стиль і створює інтерфейси, зручні для користувачів та виразні для бренду.",
       "image": "/media/team-oleksandr.webp"
     },
     {
       "name": "Микола",
-      "role": "Cybersecurity Specialist",
-      "description": "Дбає про безпеку цифрових рішень, захист даних і стійкість сайтів до кіберзагроз.",
+      "role": "Cybersecurity Lead",
+      "description": "Керує напрямом кібербезпеки: відповідає за перевірку цифрових рішень, захист даних і усунення вразливостей.",
       "image": "/media/team-mykola.webp"
     }
   ],
   "assets": {
     "hero": "/media/hero-poster.jpg",
-    "heroVideo": "/media/hero-animation.webm",
+    "heroVideo": "/media/hero-desktop-v2.mp4",
     "lead": "/media/team-lead.jpg",
     "studio": "/media/studio-team.jpg",
     "process": [

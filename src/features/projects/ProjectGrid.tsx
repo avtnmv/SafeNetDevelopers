@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import Image from 'next/image';
+import { ResponsiveImage as Image } from '@/components/ui/ResponsiveImage';
 import Link from 'next/link';
 import { projects, type Project } from '@/lib/content';
 import { Disclosure } from '@/components/ui/Disclosure';

@@ -36,14 +36,15 @@ export function ContactFormContent() {
         <PlanSelect />
         <label htmlFor="contact-message">
           Деталі (необов’язково)
-          <textarea id="contact-message" name="message" rows={2} maxLength={5000} />
+          <textarea id="contact-message" name="message" rows={2} maxLength={2500} />
         </label>
       </div>
       <button type="submit">Надіслати заявку</button>
       <p className={s.consent}>
         Надсилаючи форму, ви погоджуєтесь з{' '}
         <a href="/legal/terms-of-service">умовами використання</a> та{' '}
-        <a href="/legal/privacy-policy">політикою конфіденційності</a>.
+        <a href="/legal/privacy-policy">політикою конфіденційності</a>. Дані заявки передаються
+        нашій команді через Telegram.
       </p>
     </>
   );
