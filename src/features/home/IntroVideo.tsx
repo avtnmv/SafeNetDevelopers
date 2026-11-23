@@ -1,4 +1,5 @@
 'use client';
+import { ArrowUpRight } from '@/components/ui/ArrowUpRight';
 import { useEffect, useRef, useState } from 'react';
 import s from './IntroVideo.module.scss';
 import hero from './Hero.module.scss';
@@ -137,7 +138,7 @@ export function IntroVideo() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Відкрити на YouTube ↗
+          Відкрити на YouTube <ArrowUpRight />
         </a>
       </dialog>
     </>

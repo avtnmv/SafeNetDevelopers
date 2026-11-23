@@ -48,7 +48,7 @@ export function Testimonials() {
                 <p>Дякуємо за вашу довіру</p>
               </div>
             </div>
-            <AnchorLink className={s.reviewLink} href="/#contact">
+            <AnchorLink className={s.reviewLink} href="#contact">
               Залишити відгук
             </AnchorLink>
           </div>

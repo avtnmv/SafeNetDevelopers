@@ -335,22 +335,6 @@
   text-transform: uppercase;
   color: #666;
 }
-.successNote {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  max-width: 270px;
-  font-size: 12px;
-  line-height: 1.5;
-  color: #666;
-  span {
-    flex: 0 0 6px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #328361;
-  }
-}
 @keyframes success-enter {
   from {
     opacity: 0;

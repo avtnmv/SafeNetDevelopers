@@ -31,10 +31,6 @@ export function ContactSuccess({ onReset }: { onReset: () => void }) {
       <p>
         Ваш проєкт починається тут. Ми зв’яжемося з вами найближчим часом, щоб обговорити деталі.
       </p>
-      <div className={s.successNote}>
-        <span aria-hidden="true" />
-        Зазвичай відповідаємо за 30 хвилин у робочий час
-      </div>
       <button type="button" onClick={onReset}>
         Надіслати ще одну заявку
       </button>

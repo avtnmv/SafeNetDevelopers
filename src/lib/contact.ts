@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { validatePhone } from './phone.ts';
 
 const plans = { start: 'Старт', business: 'Бізнес', custom: 'Допоможіть обрати' };
 const invalidControls = /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f\u202a-\u202e\u2066-\u2069]/;
@@ -23,15 +24,13 @@ export function validateContact(input: unknown) {
       return null;
   }
   const name = (data.name as string).trim();
-  const phone = (data.phone as string).trim();
+  const phone = validatePhone(data.phone, data.country);
+  if (!phone) return null;
   const email = (data.email as string).trim();
   const message = (data.message as string).trim();
   const plan = data.plan as keyof typeof plans;
   const requestId = data.requestId as string;
   if (!name || /[\r\n]/.test(name) || /[\r\n]/.test(phone)) return null;
-  if (!/^@[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(phone) && !/^\+?[\d\s().-]{7,30}$/.test(phone))
-    return null;
-  if (!phone.startsWith('@') && phone.replace(/\D/g, '').length < 7) return null;
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
   if (
     !Object.hasOwn(plans, plan) ||
@@ -106,7 +105,7 @@ export function createContactHandler(options: {
       return reply(400, 'Некоректні дані форми.');
     }
     const data = validateContact(input);
-    if (!data) return reply(400, 'Перевірте ім’я, телефон або @username та інші поля.');
+    if (!data) return reply(400, 'Перевірте ім’я, телефон для обраної країни та інші поля.');
     if (data.website) return reply(200);
     if (!options.token || !options.chatId)
       return reply(503, 'Форма тимчасово недоступна. Напишіть на Info@safenet.org.ua.');

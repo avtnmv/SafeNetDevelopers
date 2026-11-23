@@ -1,3 +1,4 @@
+import { ArrowUpRight } from '@/components/ui/ArrowUpRight';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -55,7 +56,9 @@ export default async function ProjectPage({ params }: Props) {
       </div>
       <nav aria-label="Інші проєкти" className={s.next}>
         <Link href="/projects">Усі проєкти</Link>
-        <Link href={`/projects/${next.slug}`}>Далі: {next.name} ↗</Link>
+        <Link href={`/projects/${next.slug}`}>
+          Далі: {next.name} <ArrowUpRight />
+        </Link>
       </nav>
     </article>
   );

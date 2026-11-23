@@ -1,4 +1,5 @@
 'use client';
+import { ArrowUpRight } from '@/components/ui/ArrowUpRight';
 import { useEffect, useRef, useState } from 'react';
 import s from './PlanSelect.module.scss';
 const options = [
@@ -8,7 +9,7 @@ const options = [
     value: 'custom',
     title: 'Допоможіть обрати',
     detail: 'Підберемо рішення під вашу задачу',
-    price: '↗',
+    price: null,
   },
 ];
 export function PlanSelect() {
@@ -74,7 +75,7 @@ export function PlanSelect() {
                 {option.title}
                 <small>{option.detail}</small>
               </span>
-              <b>{option.price}</b>
+              <b>{option.price ?? <ArrowUpRight />}</b>
             </label>
           ))}
         </fieldset>

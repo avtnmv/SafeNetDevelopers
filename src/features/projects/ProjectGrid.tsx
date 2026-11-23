@@ -1,3 +1,4 @@
+import { ArrowUpRight } from '@/components/ui/ArrowUpRight';
 import type { CSSProperties } from 'react';
 import { ResponsiveImage as Image } from '@/components/ui/ResponsiveImage';
 import Link from 'next/link';
@@ -83,7 +84,7 @@ export function ProjectGrid({ items = projects }: { items?: Project[] }) {
             <div className={s.caption}>
               <h3>{project.name}</h3>
               <span>/ {project.year}</span>
-              <span aria-hidden="true">↗</span>
+              <ArrowUpRight />
             </div>
           </Link>
         ),

@@ -1,7 +1,9 @@
 'use client';
-import { useRef, useState, type FormEvent, type ReactNode } from 'react';
+import { lazy, Suspense, useRef, useState, type FormEvent, type ReactNode } from 'react';
 import s from './Contact.module.scss';
-import { ContactSuccess } from './ContactSuccess';
+const ContactSuccess = lazy(() =>
+  import('./ContactSuccess').then((module) => ({ default: module.ContactSuccess })),
+);
 export function ContactForm({ children }: { children: ReactNode }) {
   const [status, setStatus] = useState('');
   const [pending, setPending] = useState(false);
@@ -16,9 +18,15 @@ export function ContactForm({ children }: { children: ReactNode }) {
     const data = new FormData(form);
     busy.current = true;
     setPending(true);
-    setStatus('Надсилаємо заявку…');
+    setStatus('Перевіряємо номер…');
     requestId.current ||= crypto.randomUUID();
     try {
+      const { validatePhone } = await import('@/lib/phone');
+      if (!validatePhone(data.get('phone'), data.get('country'))) {
+        setStatus('Введіть коректний номер для обраної країни.');
+        return;
+      }
+      setStatus('Надсилаємо заявку…');
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -69,15 +77,17 @@ export function ContactForm({ children }: { children: ReactNode }) {
         </label>
       </fieldset>
       {submitted && (
-        <ContactSuccess
-          onReset={() => {
-            setSubmitted(false);
-            setStatus('');
-            requestAnimationFrame(() =>
-              formRef.current?.querySelector<HTMLInputElement>('[name="name"]')?.focus(),
-            );
-          }}
-        />
+        <Suspense fallback={<p role="status">Заявку надіслано…</p>}>
+          <ContactSuccess
+            onReset={() => {
+              setSubmitted(false);
+              setStatus('');
+              requestAnimationFrame(() =>
+                formRef.current?.querySelector<HTMLInputElement>('[name="name"]')?.focus(),
+              );
+            }}
+          />
+        </Suspense>
       )}
       <p role="status" aria-live="polite" className={s.status}>
         {status}

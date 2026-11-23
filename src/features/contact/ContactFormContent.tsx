@@ -1,4 +1,5 @@
 import s from './Contact.module.scss';
+import { PhoneInput } from './PhoneInput';
 import { PlanSelect } from './PlanSelect';
 export function ContactFormContent() {
   return (
@@ -11,18 +12,7 @@ export function ContactFormContent() {
           Ваше ім’я*
           <input id="contact-name" name="name" autoComplete="name" required maxLength={120} />
         </label>
-        <label htmlFor="contact-phone">
-          Телефон або @telegram*
-          <input
-            id="contact-phone"
-            name="phone"
-            type="text"
-            autoComplete="tel"
-            required
-            maxLength={80}
-            placeholder="+380… або @username"
-          />
-        </label>
+        <PhoneInput />
         <label htmlFor="contact-email">
           Електронна пошта (необов’язково)
           <input

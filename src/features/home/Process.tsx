@@ -217,7 +217,7 @@ export function Process() {
       </div>
       <div className={s.action}>
         <p>Ваш наступний крок — просто розповісти нам про ідею.</p>
-        <ActionLink href="/#contact">Обговорити проєкт</ActionLink>
+        <ActionLink href="#contact">Обговорити проєкт</ActionLink>
       </div>
     </section>
   );

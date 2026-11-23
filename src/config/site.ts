@@ -1,10 +1,10 @@
 export const navigation = [
-  { href: '/#projects', label: 'Проєкти' },
-  { href: '/#advantages', label: 'Чому обирають нас' },
-  { href: '/#services', label: 'Що входить' },
-  { href: '/#testimonials', label: 'Відгуки' },
-  { href: '/#pricing', label: 'Ціни' },
-  { href: '/#faq', label: 'Запитання' },
+  { href: '/#creative-work', label: 'Проєкти' },
+  { href: '/#creative-services', label: 'Послуги' },
+  { href: '/web-development', label: 'Розробка сайтів' },
+  { href: '/#creative-studio', label: 'Про нас' },
+  { href: '/#creative-reviews', label: 'Відгуки' },
+  { href: '/#creative-faq', label: 'Запитання' },
   { href: '/#contact', label: 'Контакти' },
 ] as const;
 export const site = {
@@ -12,7 +12,7 @@ export const site = {
   url: 'https://safenet-developers.com',
   telegram: 'https://t.me/safenet_developers',
   description:
-    'Сайт для бізнесу за 3 дні: дизайн, тексти, розробка та перевірка безпеки. Фіксовані пакети $300 і $500. Договір, оплата 50/50, домен і доступи — ваші.',
+    'SafeNet Developers — сайти, вебплатформи та застосунки, аудит безпеки, контент-продакшн, графічний дизайн і брендинг для вашого бізнесу.',
   email: 'Info@safenet.org.ua',
   phone: '(312) 555-2468',
   phoneHref: 'tel:5556667777',

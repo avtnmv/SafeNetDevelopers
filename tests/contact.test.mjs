@@ -5,7 +5,8 @@ import { createContactHandler, validateContact } from '../src/lib/contact.ts';
 const origin = 'https://safenet-developers.com';
 const valid = () => ({
   name: 'Олена',
-  phone: '@olena_test',
+  phone: '+380671234567',
+  country: 'UA',
   email: '',
   message: 'Хочу сайт',
   plan: 'custom',
@@ -28,6 +29,10 @@ test('strict validation rejects invalid fields, controls, plans and excessive te
     { name: 'a\nb' },
     { phone: '--- ---' },
     { phone: '@x' },
+    { phone: '@telegram_user' },
+    { country: 'US' },
+    { country: 'ZZ' },
+    { phone: '+3806712345678' },
     { plan: '__proto__' },
     { email: 'bad' },
     { message: 'x'.repeat(2501) },

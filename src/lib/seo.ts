@@ -4,7 +4,7 @@ export const socialImage = {
   url: '/media/safenet-og.png',
   width: 1200,
   height: 630,
-  alt: 'SafeNet Developers — сайт для бізнесу за 3 дні. Дизайн, розробка та перевірка безпеки.',
+  alt: 'SafeNet Developers — розробка, дизайн, контент і безпека для бізнесу.',
 };
 export function pageMetadata(title: string, description: string, path: string): Metadata {
   const fullTitle = title.includes(site.name) ? title : `${title} — ${site.name}`;

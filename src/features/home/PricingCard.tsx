@@ -30,7 +30,7 @@ export function PricingCard({ offer, seo }: { offer: PricingOffer; seo: boolean 
       </p>
       <AnchorLink
         className={s.contact}
-        href="/#contact"
+        href="#contact"
         beforeNavigate={() => {
           document.dispatchEvent(new CustomEvent('site:plan', { detail: offer.id }));
         }}

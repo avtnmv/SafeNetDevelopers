@@ -37,8 +37,8 @@ export function Hero() {
             <span>Структура, тексти, дизайн — за 3 дні. $300 або $500. Ціна фіксована.</span>
           </p>
           <div className={s.actions}>
-            <ActionLink href="/#contact">Розрахувати сайт за 15 хвилин</ActionLink>
-            <ActionLink href="/#projects" secondary>
+            <ActionLink href="#contact">Розрахувати сайт за 15 хвилин</ActionLink>
+            <ActionLink href="#projects" secondary>
               Дивитися кейси
             </ActionLink>
           </div>

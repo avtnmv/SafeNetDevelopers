@@ -26,7 +26,20 @@ const deferredScripts = deferredPaths.map((url) => {
   const file = fs.readFileSync(path.join(root, '.next', url));
   return { url, bytes: file.length, gzip: gzipSync(file).length };
 });
+const contactPaths = new Set(
+  Object.entries(deferredManifest)
+    .filter(([key]) => key.startsWith('features/contact/'))
+    .flatMap(([, entry]) => entry.files),
+);
+const contactGzip = deferredScripts
+  .filter((s) => contactPaths.has(s.url))
+  .reduce((n, s) => n + s.gzip, 0);
+const effectsGzip = deferredScripts
+  .filter((s) => !contactPaths.has(s.url))
+  .reduce((n, s) => n + s.gzip, 0);
 const report = {
+  deferredContactGzipBytes: contactGzip,
+  deferredEffectsGzipBytes: effectsGzip,
   scriptCount: scripts.length,
   deferredJavascriptGzipBytes: deferredScripts.reduce((n, s) => n + s.gzip, 0),
   deferredScripts,
@@ -38,8 +51,9 @@ const report = {
 console.log(JSON.stringify(report, null, 2));
 if (report.modernJavascriptGzipBytes > 150 * 1024)
   throw new Error('Modern initial JS exceeds the 150 KiB gzip budget');
-if (report.deferredJavascriptGzipBytes > 12 * 1024)
-  throw new Error('Deferred effects exceed the 12 KiB gzip budget');
+if (contactGzip > 55 * 1024)
+  throw new Error('Deferred phone validation exceeds the 55 KiB gzip budget');
+if (effectsGzip > 12 * 1024) throw new Error('Deferred effects exceed the 12 KiB gzip budget');
 if (report.htmlGzipBytes > 50 * 1024) throw new Error('HTML exceeds the 50 KiB gzip budget');
 if (scriptPaths.some((url) => !url.startsWith('/_next/static/')))
   throw new Error('Unexpected external runtime detected');

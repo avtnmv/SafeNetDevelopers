@@ -3,6 +3,7 @@ const config = {
   agentRules: false,
   poweredByHeader: false,
   output: 'standalone',
+  serverExternalPackages: ['ip-location-api'],
   devIndicators: false,
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -11,8 +12,8 @@ const config = {
   },
   async redirects() {
     return [
-      { source: '/studio/:path*', destination: '/#process', permanent: false },
-      { source: '/projects/:path*', destination: '/#projects', permanent: false },
+      { source: '/studio/:path*', destination: '/#creative-studio', permanent: false },
+      { source: '/projects/:path*', destination: '/#creative-work', permanent: false },
       { source: '/contact', destination: '/#contact', permanent: false },
     ];
   },
