@@ -16,6 +16,12 @@ export function ContactForm({ children }: { children: ReactNode }) {
     if (busy.current || submitted) return;
     const form = event.currentTarget;
     const data = new FormData(form);
+    if (data.get('plan') === 'branding') {
+      data.set(
+        'message',
+        `Брендинг · ${data.get('brandingTask') || ''}\n${data.get('message') || ''}`,
+      );
+    }
     busy.current = true;
     setPending(true);
     setStatus('Перевіряємо номер…');

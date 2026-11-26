@@ -1,7 +1,12 @@
 import { createHash } from 'node:crypto';
 import { validatePhone } from './phone.ts';
 
-const plans = { start: 'Старт', business: 'Бізнес', custom: 'Допоможіть обрати' };
+const plans = {
+  start: 'Старт',
+  business: 'Бізнес',
+  custom: 'Допоможіть обрати',
+  branding: 'Брендинг',
+};
 const invalidControls = /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f\u202a-\u202e\u2066-\u2069]/;
 export function validateContact(input: unknown) {
   if (!input || typeof input !== 'object' || Array.isArray(input)) return null;
@@ -138,7 +143,7 @@ export function createContactHandler(options: {
       `Ім’я: ${data.name}`,
       `Контакт: ${data.phone}`,
       `Email: ${data.email || 'Не вказано'}`,
-      `Тариф: ${plans[data.plan]}`,
+      `${data.plan === 'branding' ? 'Послуга' : 'Тариф'}: ${plans[data.plan]}`,
       '',
       'Деталі:',
       data.message || 'Не вказано',

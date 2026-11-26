@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Disclosure } from '@/components/ui/Disclosure';
 import { AnchorLink } from '@/components/navigation/AnchorLink';
 import { CreativeHeading } from './CreativeHeading';
@@ -46,6 +47,7 @@ function ServiceContent({ service }: { service: (typeof services)[number] }) {
 
 export function CreativeServices() {
   const [active, setActive] = useState(0);
+  const router = useRouter();
   return (
     <section className={s.services} id="creative-services" tabIndex={-1} data-anchor-target>
       <CreativeHeading
@@ -54,19 +56,26 @@ export function CreativeServices() {
         description="Від першого враження до щоденної роботи. Сайти, розробка, аудит безпеки, контент, графічний дизайн і брендинг — комплексні рішення для вашого бізнесу."
       />
       <div className={s.serviceMobile}>
-        {services.map((service, i) => (
-          <Disclosure
-            key={service.title}
-            title={service.title}
-            defaultOpen={i === 0}
-            reveal={false}
-            className={s.serviceAccordion}
-          >
-            <div className={s.servicePanel}>
-              <ServiceContent service={service} />
-            </div>
-          </Disclosure>
-        ))}
+        {services.map((service, i) =>
+          service.href === '/development' || service.href === '/branding' ? (
+            <AnchorLink key={service.title} href={service.href} className={s.servicePageLink}>
+              {service.title}
+              <span>Дізнатися більше</span>
+            </AnchorLink>
+          ) : (
+            <Disclosure
+              key={service.title}
+              title={service.title}
+              defaultOpen={i === 0}
+              reveal={false}
+              className={s.serviceAccordion}
+            >
+              <div className={s.servicePanel}>
+                <ServiceContent service={service} />
+              </div>
+            </Disclosure>
+          ),
+        )}
       </div>
       <div className={s.serviceGrid}>
         <div
@@ -84,7 +93,11 @@ export function CreativeServices() {
               aria-selected={active === i}
               aria-controls={`creative-service-${i}`}
               tabIndex={active === i ? 0 : -1}
-              onClick={() => setActive(i)}
+              onClick={() =>
+                service.href === '/development' || service.href === '/branding'
+                  ? router.push(service.href)
+                  : setActive(i)
+              }
               onMouseEnter={() => {
                 if (window.matchMedia('(hover: hover)').matches) setActive(i);
               }}

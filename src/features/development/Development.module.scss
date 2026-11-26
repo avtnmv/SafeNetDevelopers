@@ -1,0 +1,372 @@
+@use '@/styles/mixins' as *;
+
+.hero {
+  margin: 8px;
+  padding: 32px calc(var(--gutter) - 8px);
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: white;
+  h1 {
+    margin: 0;
+    font-size: clamp(48px, 5.25vw, 100px);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.065em;
+  }
+  h1 span {
+    color: #aaa;
+  }
+}
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #bdbdbd;
+  font-size: 14px;
+  a {
+    @include focus;
+    &:hover {
+      color: white;
+    }
+  }
+}
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, min(55vw, 880px));
+  align-items: center;
+  gap: 64px;
+  padding: 48px 0;
+}
+.lead {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 600px;
+  color: #ccc;
+  margin: 28px 0;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.heroNotes {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+  font-size: 14px;
+  color: #ddd;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  svg {
+    width: 12px;
+    height: 12px;
+    flex: 0 0 12px;
+  }
+}
+
+.securityDetails,
+.advantages {
+  h3 {
+    margin: 0 0 18px;
+    font-size: clamp(23px, 2.1vw, 32px);
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+  }
+  p {
+    margin: 0;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+}
+.scope {
+  padding: 100px var(--gutter);
+  background: #ebebeb;
+}
+
+.security {
+  margin: 8px;
+  border-radius: var(--radius);
+  padding: 100px calc(var(--gutter) - 8px);
+  background: var(--ink);
+  color: white;
+}
+.securityIntro {
+  max-width: 1100px;
+  margin: 0 auto 64px;
+  text-align: center;
+  h2 {
+    margin: 0;
+    font-size: clamp(36px, 4.7vw, 88px);
+    font-weight: 500;
+    letter-spacing: -0.065em;
+    line-height: 1.04;
+    span {
+      color: #aaa;
+    }
+  }
+  > p:last-child {
+    max-width: 760px;
+    margin: 24px auto 0;
+    color: #bdbdbd;
+    font-size: 22px;
+    line-height: 1.5;
+  }
+}
+.securityDetails {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  article {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 40px 0;
+    border-radius: var(--card-radius);
+    background: white;
+    color: var(--ink);
+  }
+  article:nth-child(2) {
+    background: #242424;
+    color: white;
+    p {
+      color: #bdbdbd;
+    }
+  }
+  h3 {
+    margin-bottom: 24px;
+    font-size: clamp(26px, 2.5vw, 40px);
+  }
+  p {
+    max-width: 560px;
+    font-size: 18px;
+  }
+  .note {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+}
+.securityOrbit {
+  display: block;
+  width: calc(100% + 80px);
+  height: auto;
+  aspect-ratio: 640 / 350;
+  flex-shrink: 0;
+  margin: auto -40px 0;
+  padding-top: 40px;
+  color: #777;
+}
+// Preserve the original composition; only small accents drift along the arcs.
+.orbitRotation {
+  transform-origin: 680px 370px;
+  animation: orbitDrift var(--orbit-duration) ease-in-out var(--orbit-delay) infinite;
+}
+.orbitPacket {
+  stroke-linecap: round;
+}
+.orbitPulse,
+.orbitPulseInner,
+.orbitIcon {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-duration: var(--signal-duration);
+  animation-delay: var(--signal-delay);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.orbitPulse {
+  animation-name: orbitSignal;
+}
+.orbitPulseInner {
+  animation-name: orbitGlow;
+}
+.orbitIcon {
+  animation-name: orbitReveal;
+}
+.securityDetails article:nth-child(2) .securityOrbit {
+  color: #bdbdbd;
+}
+@keyframes orbitDrift {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  48% {
+    transform: rotate(8deg);
+  }
+}
+@keyframes orbitSignal {
+  0%,
+  34%,
+  100% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  4% {
+    opacity: 0.3;
+  }
+  18%,
+  33% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+  19% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  23% {
+    opacity: 0.2;
+  }
+}
+@keyframes orbitGlow {
+  0%,
+  36%,
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  8%,
+  24% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+  17% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+}
+@keyframes orbitReveal {
+  0%,
+  29%,
+  58%,
+  100% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  36%,
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbitRotation,
+  .orbitPulse,
+  .orbitPulseInner,
+  .orbitIcon {
+    animation: none;
+  }
+  .orbitPulse,
+  .orbitPulseInner {
+    opacity: 0;
+  }
+}
+.deliverables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 0;
+  }
+  li:last-child {
+    padding-bottom: 0;
+  }
+  li {
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+    line-height: 1.6;
+  }
+}
+.deliverablesIntro {
+  h2 {
+    margin: 0;
+    font-size: clamp(36px, 4.7vw, 88px);
+    line-height: 1.04;
+    letter-spacing: -0.065em;
+    font-weight: 500;
+  }
+  p {
+    margin: 24px 0 0;
+    max-width: 560px;
+    color: var(--muted);
+    font-size: 22px;
+    line-height: 1.5;
+  }
+}
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  article {
+    border-top: 1px solid #bbb;
+    padding-top: 28px;
+  }
+}
+@include mobile {
+  .heroGrid,
+  .securityDetails,
+  .deliverables {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .heroGrid {
+    padding: 48px 0 32px;
+  }
+  .advantages {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .scope {
+    padding: 64px var(--gutter);
+  }
+  .security {
+    padding: 64px calc(var(--gutter) - 8px);
+  }
+  .securityIntro {
+    margin-bottom: 40px;
+    > p:last-child {
+      font-size: 18px;
+    }
+  }
+  .securityDetails {
+    gap: 20px;
+    article {
+      padding: 28px 24px 0;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  .securityOrbit {
+    width: calc(100% + 48px);
+    margin-inline: -24px;
+  }
+}
+
+@media (min-width: 810px) and (max-width: 1199px) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 32px;
+  }
+  .hero h1 {
+    font-size: clamp(44px, 5vw, 62px);
+  }
+}
+
+.actions .scopeLink {
+  border-bottom: 0;
+  text-decoration: none;
+}

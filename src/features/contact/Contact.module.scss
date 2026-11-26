@@ -1,10 +1,11 @@
 @use '@/styles/mixins' as *;
 .section {
   margin: var(--section-space) 6px 0;
-  padding: 60px 30px;
+  padding: 40px 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -46,8 +47,10 @@
   gap: 80px;
 }
 .form {
-  width: 69%;
-  min-height: 650px;
+  // The headline sets the content width; the card adds 40px on either side.
+  width: max-content;
+  max-width: 100%;
+  min-height: 0;
   padding: 40px;
   background: white;
   color: var(--ink);
@@ -103,6 +106,7 @@
   }
 }
 .fields {
+  contain: inline-size;
   display: grid;
   gap: 16px;
 }
@@ -147,7 +151,7 @@
 .copy {
   min-width: 0;
   container-type: inline-size;
-  padding: 0 0 0 40px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 56px;
@@ -172,21 +176,25 @@
   flex-direction: column;
   gap: 24px;
   p {
-    font-size: 22px;
-    max-width: 420px;
+    font-size: 32px;
+    width: 100%;
+    max-width: none;
   }
 }
 .copyBenefits {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-width: 340px;
+  flex-wrap: wrap;
+  gap: 32px;
+  width: 100%;
 }
 .benefitIcon {
   display: block;
   flex-shrink: 0;
 }
 .copyBenefit {
+  width: 270px;
+  max-width: 100%;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -200,13 +208,18 @@
 @include tablet {
   .section {
     padding: 40px 24px;
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
   .form {
-    width: 90%;
-    padding: 30px;
+    width: max-content;
+    padding: 40px;
   }
   .copy {
-    padding-left: 24px;
+    padding-left: 0;
+  }
+  .copyBenefit h3 {
+    font-size: 16px;
   }
 }
 @include mobile {
@@ -242,6 +255,7 @@
 }
 
 .form .consent {
+  contain: inline-size;
   display: block;
   font-size: 12px;
   line-height: 1.5;
@@ -358,5 +372,17 @@
   .successIcon,
   .successIcon path {
     animation: none;
+  }
+}
+
+.formHeading h3 {
+  margin: 0;
+  font-size: 32px;
+  white-space: nowrap;
+}
+@media (max-width: 809px) {
+  .formHeading h3 {
+    font-size: 28px;
+    white-space: normal;
   }
 }

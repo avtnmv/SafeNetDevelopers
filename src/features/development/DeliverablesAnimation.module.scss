@@ -1,0 +1,127 @@
+.panel {
+  min-width: 0;
+  min-height: 0;
+  contain: size;
+  align-self: stretch;
+  border-radius: var(--radius);
+  background: #eaeaea;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  svg {
+    width: 100%;
+    height: 0;
+    min-height: 0;
+    flex: 1;
+    margin: 0;
+  }
+}
+.scene,
+.caption {
+  opacity: 0;
+  animation: deliveryScene 15s ease-in-out var(--delay) infinite;
+}
+.scene {
+  transform-origin: 280px 240px;
+}
+.captions {
+  position: relative;
+  top: -12px;
+  flex: 0 0 44px;
+  text-align: center;
+}
+.caption {
+  position: absolute;
+  inset: 0;
+  strong {
+    font-size: clamp(22px, 2.1vw, 32px);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+  }
+}
+.progress {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  span {
+    flex: 1;
+    height: 2px;
+    background: #d2d2d2;
+    overflow: hidden;
+  }
+  i {
+    display: block;
+    height: 100%;
+    background: #827197;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: deliveryProgress 15s linear var(--delay) infinite;
+  }
+}
+// All pieces use the same clock as the scene and retain their final geometry.
+.piece {
+  animation: assemblePieces 15s cubic-bezier(0.42, 0, 0.25, 1) var(--delay) infinite both;
+}
+@keyframes assemblePieces {
+  0%,
+  24%,
+  100% {
+    transform: translate(var(--from-x), var(--from-y));
+  }
+  12%,
+  20% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes deliveryScene {
+  0% {
+    opacity: 0;
+  }
+  2%,
+  18% {
+    opacity: 1;
+  }
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes deliveryProgress {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  21%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .piece,
+  .scene,
+  .caption,
+  .progress i {
+    animation: none;
+  }
+  .scene:first-of-type,
+  .caption:first-child {
+    opacity: 1;
+  }
+}
+@media (max-width: 809px) {
+  .panel {
+    padding: 24px;
+    contain: none;
+    svg {
+      height: auto;
+      flex: none;
+    }
+  }
+}

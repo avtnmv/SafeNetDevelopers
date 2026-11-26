@@ -114,3 +114,20 @@ test('upstream errors never expose token or incorrectly report success', async (
   const missing = createContactHandler({ origin });
   assert.equal((await missing(request(valid()))).status, 503);
 });
+
+test('branding inquiries preserve the brief and are labeled as a service', async () => {
+  const payload = {
+    ...valid(),
+    plan: 'branding',
+    message: 'Брендинг · Новий бренд\nПотрібні неймінг та айдентика.',
+  };
+  assert.ok(validateContact(payload));
+  const handler = setup(async (_url, init) => {
+    const body = JSON.parse(init.body);
+    assert.ok(body.text.includes('Послуга: Брендинг'));
+    assert.ok(body.text.includes(payload.message));
+    assert.ok(!body.text.includes('Тариф:'));
+    return new Response(JSON.stringify({ ok: true }), { status: 200 });
+  });
+  assert.equal((await handler(request(payload))).status, 200);
+});
